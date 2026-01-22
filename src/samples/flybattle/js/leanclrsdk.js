@@ -8,6 +8,7 @@ export default class LeanCLRSdk {
     await this.initWasm();
     // 3. 初始化运行时
     this.initRuntime();
+    this.loadGameAssembly();
   }
 
   loadAllAssemblies() {
@@ -133,6 +134,27 @@ export default class LeanCLRSdk {
       console.error("WASM 未初始化");
       return;
     }
+    // 缓存 load_assembly 和 invoke_method
+    if (typeof this.wasmModule.cwrap === "function") {
+      this.load_assembly = this.wasmModule.cwrap("load_assembly", "number", [
+        "string",
+      ]);
+      // invoke_method(RtAssembly*, className, methodName)
+      this.invoke_method = this.wasmModule.cwrap("invoke_method", "number", [
+        "number",
+        "string",
+        "string",
+      ]);
+    } else {
+      this.load_assembly = this.wasmModule.load_assembly;
+      this.invoke_method = this.wasmModule.invoke_method;
+    }
+    if (!this.load_assembly) {
+      console.error("未找到 load_assembly 导出函数");
+    }
+    if (!this.invoke_method) {
+      console.error("未找到 invoke_method 导出函数");
+    }
     if (typeof this.wasmModule.ccall === "function") {
       const result = this.wasmModule.ccall(
         "initialize_runtime",
@@ -150,7 +172,49 @@ export default class LeanCLRSdk {
     }
   }
 
-  update() {}
+  loadGameAssembly() {
+    if (!this.wasmModule) {
+      console.error("WASM 未初始化，无法加载 Game.dll");
+      return;
+    }
+    if (!this.load_assembly) {
+      console.error("未找到 load_assembly 导出函数");
+      return;
+    }
+    const result = this.load_assembly("Game");
+    if (result) {
+      console.log("Game.dll 加载成功，返回值:", result);
+      this.gameAssembly = result;
+    } else {
+      console.error("Game.dll 加载失败，返回值:", result);
+    }
+  }
+
+  callGameStart() {
+    if (!this.wasmModule) {
+      console.error("WASM 未初始化，无法调用 Game.App::Start");
+      return;
+    }
+    if (!this.invoke_method) {
+      console.error("未找到 invoke_method 导出函数");
+      return;
+    }
+    if (!this.gameAssembly) {
+      console.error("Game.dll 未加载，无法调用 Game.App::Start");
+      return;
+    }
+    const result = this.invoke_method(this.gameAssembly, "Game.App", "Start");
+    if (result === 0) {
+      console.log("Game.App::Start 调用成功");
+    } else {
+      console.error("Game.App::Start 调用失败，返回值:", result);
+    }
+  }
+
+  update() {
+    if (!this.wasmModule || !this.invoke_method || !this.gameAssembly) return;
+    this.invoke_method(this.gameAssembly, "Game.App", "Update");
+  }
 
   render() {}
 }
