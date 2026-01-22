@@ -1,0 +1,8 @@
+
+namespace LeanCLRSdk
+{
+    class App
+    {
+
+    }
+}

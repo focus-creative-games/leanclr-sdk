@@ -1,0 +1,18 @@
+{
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.rulers": [160],
+    "editor.wordWrapColumn": 160,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
