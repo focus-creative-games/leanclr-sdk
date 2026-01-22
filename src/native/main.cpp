@@ -29,7 +29,7 @@ using namespace leanclr;
 
 // Define load_assembly_file using EM_JS so JavaScript can implement it
 #ifdef EMSCRIPTEN
-EM_JS(int32_t, load_assembly_file, (const char* assembly_name, const char* extension, byte** out_buf, size_t* out_size), {
+EM_JS(int32_t, load_assembly_file, (const char *assembly_name, const char *extension, byte **out_buf, size_t *out_size), {
     // This is a wrapper that JavaScript will override
     // The actual implementation is provided by Module.load_assembly_file
     if (typeof Module.load_assembly_file == 'function')
@@ -41,16 +41,16 @@ EM_JS(int32_t, load_assembly_file, (const char* assembly_name, const char* exten
 });
 #else
 
-extern "C" int32_t load_assembly_file(const char* assembly_name, const char* extension, byte** out_buf, size_t* out_size);
+extern "C" int32_t load_assembly_file(const char *assembly_name, const char *extension, byte **out_buf, size_t *out_size);
 
 #endif
 
-extern "C" EMSCRIPTEN_KEEPALIVE void* allocate_bytes(size_t size)
+extern "C" EMSCRIPTEN_KEEPALIVE void *allocate_bytes(size_t size)
 {
     return alloc::GeneralAllocation::malloc_zeroed(size);
 }
 
-extern "C" EMSCRIPTEN_KEEPALIVE metadata::RtAssembly* load_assembly(const char* assembly_name)
+extern "C" EMSCRIPTEN_KEEPALIVE metadata::RtAssembly *load_assembly(const char *assembly_name)
 {
     auto ret = vm::Assembly::load_by_name(assembly_name);
     if (ret.is_err())
@@ -61,16 +61,16 @@ extern "C" EMSCRIPTEN_KEEPALIVE metadata::RtAssembly* load_assembly(const char* 
     return ret.unwrap();
 }
 
-extern "C" EMSCRIPTEN_KEEPALIVE int32_t invoke_method(metadata::RtAssembly* assembly, const char* type_name, const char* method_name)
+extern "C" EMSCRIPTEN_KEEPALIVE int32_t invoke_method(metadata::RtAssembly *assembly, const char *type_name, const char *method_name)
 {
-    metadata::RtModuleDef* mod = assembly->mod;
+    metadata::RtModuleDef *mod = assembly->mod;
     auto ret = mod->get_class_by_nested_full_name(type_name, false, true);
     if (ret.is_err())
     {
         printf("Failed to find type: %s err:%d\n", type_name, (int32_t)ret.unwrap_err());
         return 1;
     }
-    metadata::RtClass* klass = ret.unwrap();
+    metadata::RtClass *klass = ret.unwrap();
 
     auto ret_init = vm::Class::initialize_all(klass);
     if (ret_init.is_err())
@@ -79,7 +79,7 @@ extern "C" EMSCRIPTEN_KEEPALIVE int32_t invoke_method(metadata::RtAssembly* asse
         return 1;
     }
 
-    const metadata::RtMethodInfo* method_def = vm::Method::find_matched_method_in_class_by_name(klass, method_name);
+    const metadata::RtMethodInfo *method_def = vm::Method::find_matched_method_in_class_by_name(klass, method_name);
     if (!method_def)
     {
         printf("Failed to find method: %s in type: %s\n", method_name, type_name);
@@ -111,9 +111,9 @@ extern "C" EMSCRIPTEN_KEEPALIVE int32_t invoke_method(metadata::RtAssembly* asse
     return 0;
 }
 
-static leanclr::RtResult<vm::FileData> local_assembly_loader(const char* assembly_name, const char* extension)
+static leanclr::RtResult<vm::FileData> local_assembly_loader(const char *assembly_name, const char *extension)
 {
-    byte* buf = nullptr;
+    byte *buf = nullptr;
     size_t size = 0;
     int32_t res = load_assembly_file(assembly_name, extension, &buf, &size);
     if (res != 0)
@@ -138,7 +138,7 @@ extern "C" EMSCRIPTEN_KEEPALIVE int32_t initialize_runtime()
     auto result = vm::Runtime::initialize();
     if (result.is_err())
     {
-        return 1 + (int32_t)result.unwrap_err();
+        return (int32_t)result.unwrap_err();
     }
     runtime_initialized = true;
     return 0;

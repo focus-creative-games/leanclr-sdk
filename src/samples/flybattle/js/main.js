@@ -101,11 +101,11 @@ export default class Main {
 
   // 游戏逻辑更新主函数
   update() {
-    GameGlobal.databus.frame++; // 增加帧数
+    // GameGlobal.databus.frame++; // 增加帧数
 
-    if (GameGlobal.databus.isGameOver) {
-      return;
-    }
+    // if (GameGlobal.databus.isGameOver) {
+    //   return;
+    // }
     this.leanclrSdk.update();
 
     // this.bg.update(); // 更新背景

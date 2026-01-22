@@ -30,11 +30,18 @@ export default class LeanCLRSdk {
       dllFiles.forEach((name) => {
         fs.readFile({
           filePath: `dlls/${name}.bin`,
-          encoding: "binary",
           success: (res) => {
-            this.assemblyCache[name] = new Uint8Array(res.data);
+            let arr;
+            if (res.data instanceof ArrayBuffer) {
+              arr = new Uint8Array(res.data);
+            } else if (res.data && res.data.buffer) {
+              arr = new Uint8Array(res.data.buffer);
+            } else {
+              arr = new Uint8Array(0);
+            }
+            this.assemblyCache[name] = arr;
             loadedCount++;
-            console.log(`已加载: ${name}.bin`);
+            console.log(`已加载: ${name}.bin, 长度: ${arr.length}`);
             if (loadedCount === totalCount) {
               console.log("所有程序集加载完成");
               resolve();
