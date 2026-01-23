@@ -31,7 +31,7 @@ if(EMSCRIPTEN)
         "SHELL:-s MODULARIZE=1"
         "SHELL:-s EXPORT_NAME='createStartupModule'"
         "SHELL:-s ENVIRONMENT=web,worker"
-        "SHELL:--js-library=${CMAKE_CURRENT_SOURCE_DIR}/mylib.js"
+        "SHELL:--js-library=${CMAKE_CURRENT_SOURCE_DIR}/wxlib.js"
     )
 
     if(CMAKE_BUILD_TYPE STREQUAL "Debug")

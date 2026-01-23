@@ -18,7 +18,16 @@
     <DebugType>portable</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" />
+    <Compile Include="Animation.cs" />
+    <Compile Include="AudioContext.cs" />
+    <Compile Include="Image.cs" />
+    <Compile Include="InputSystem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Console.cs" />
+    <Compile Include="Canvas.cs" />
+    <Compile Include="CanvasContext.cs" />
+    <Compile Include="ScreenInfo.cs" />
+    <Compile Include="Sprite.cs" />
   </ItemGroup>
   <ItemGroup>
     <!-- <Reference Include="netstandard">

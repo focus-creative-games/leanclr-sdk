@@ -1,7 +1,6 @@
-
 namespace LeanCLRSdk
 {
-    class App
+    public class Animation
     {
 
     }
