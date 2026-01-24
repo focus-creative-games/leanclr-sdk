@@ -9,6 +9,7 @@ export default class LeanCLRSdk {
     // 3. 初始化运行时
     this.initRuntime();
     this.loadGameAssembly();
+    this.callGameStart();
   }
 
   loadAllAssemblies() {
@@ -213,7 +214,7 @@ export default class LeanCLRSdk {
 
   update() {
     if (!this.wasmModule || !this.invoke_method || !this.gameAssembly) return;
-    this.invoke_method(this.gameAssembly, "Game.App", "Update");
+    //this.invoke_method(this.gameAssembly, "Game.App", "Update");
   }
 
   render() {}

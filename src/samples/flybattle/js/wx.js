@@ -1127,10 +1127,6 @@ async function createWasm() {
       return 0;
     };
 
-  function _my_add(a, b) {
-      return a + b;
-    }
-
   var getCFunc = (ident) => {
       var func = Module['_' + ident]; // closure exported function
       assert(func, 'Cannot call unknown function ' + ident + ', make sure it is exported');
@@ -1776,6 +1772,10 @@ function checkIncomingModuleAPI() {
   ignoredModuleProp('fetchSettings');
 }
 function load_assembly_file(assembly_name,extension,out_buf,out_size) { if (typeof Module.load_assembly_file == 'function') { return Module.load_assembly_file(assembly_name, extension, out_buf, out_size); } console.error('load_assembly_file not implemented'); return 1; }
+function console_log_impl(msg,length) { if (!msg || !length) return; let arr = HEAPU16.subarray(msg >> 1, (msg >> 1) + length); let jsStr = String.fromCharCode.apply(null, arr); console.log(jsStr); }
+function console_err_impl(msg,length) { if (!msg || !length) return; let arr = HEAPU16.subarray(msg >> 1, (msg >> 1) + length); let jsStr = String.fromCharCode.apply(null, arr); console.error(jsStr); }
+function screen_info_get_screen_width() { const windowInfo = wx.getWindowInfo ? wx.getWindowInfo() : wx.getSystemInfoSync(); return windowInfo.screenWidth; }
+function screen_info_get_screen_height() { const windowInfo = wx.getWindowInfo ? wx.getWindowInfo() : wx.getSystemInfoSync(); return windowInfo.screenHeight; }
 
 // Imports from the Wasm binary.
 var _allocate_bytes = Module['_allocate_bytes'] = makeInvalidEarlyAccess('_allocate_bytes');
@@ -1821,6 +1821,10 @@ var wasmImports = {
   /** @export */
   clock_time_get: _clock_time_get,
   /** @export */
+  console_err_impl,
+  /** @export */
+  console_log_impl,
+  /** @export */
   emscripten_resize_heap: _emscripten_resize_heap,
   /** @export */
   fd_close: _fd_close,
@@ -1831,7 +1835,9 @@ var wasmImports = {
   /** @export */
   load_assembly_file,
   /** @export */
-  my_add: _my_add
+  screen_info_get_screen_height,
+  /** @export */
+  screen_info_get_screen_width
 };
 var wasmExports = await createWasm();
 

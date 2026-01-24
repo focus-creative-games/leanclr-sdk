@@ -44,5 +44,11 @@
     <Compile Include="App.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WxSdk\WxSdk.csproj">
+      <Project>{a098e4a9-8b0e-4612-a75e-0ae2061e70ff}</Project>
+      <Name>WxSdk</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
