@@ -1,5 +1,3 @@
-sdk for platform weixin, douyin, etc.
-
 # leanclr-sdk
 
 本项目用于演示如何实现 JS 库对应的 C# SDK，通过嵌入 LeanCLR，可实现 C# 与 JS 的高效互操作，支持在微信、抖音等平台运行。
