@@ -17,35 +17,35 @@ namespace Wx
             }
             if (!string.IsNullOrEmpty(src))
             {
-                SetSrc(_audioHandle, src);
+                SetSrcInternal(_audioHandle, src);
             }
         }
 
         public string Src
         {
-            get => GetSrc(_audioHandle);
+            get => GetSrcInternal(_audioHandle);
             set
             {
-                SetSrc(_audioHandle, value);
+                SetSrcInternal(_audioHandle, value);
             }
         }
 
         public bool Loop
         {
-            get => GetLoop(_audioHandle);
-            set => SetLoop(_audioHandle, value);
+            get => GetLoopInternal(_audioHandle);
+            set => SetLoopInternal(_audioHandle, value);
         }
 
         public bool AutoPlay
         {
-            get => GetAutoPlay(_audioHandle);
-            set => SetAutoPlay(_audioHandle, value);
+            get => GetAutoPlayInternal(_audioHandle);
+            set => SetAutoPlayInternal(_audioHandle, value);
         }
 
         public float CurrentTime
         {
-            get => GetCurrentTime(_audioHandle);
-            set => SetCurrentTime(_audioHandle, value);
+            get => GetCurrentTimeInternal(_audioHandle);
+            set => SetCurrentTimeInternal(_audioHandle, value);
         }
 
         public void Play()
@@ -53,36 +53,51 @@ namespace Wx
             PlayInternal(_audioHandle);
         }
 
+        public void Pause()
+        {
+            PauseInternal(_audioHandle);
+        }
+
+        public void Stop()
+        {
+            StopInternal(_audioHandle);
+        }
+
         [DllImport("wx", EntryPoint = "wx.createInnerAudioContext")]
         private static extern IntPtr CreateAudioInternal();
 
         [DllImport("wx", EntryPoint = "audio.set_src")]
-        private static extern void SetSrc(IntPtr audioHandle, string src);
+        private static extern void SetSrcInternal(IntPtr audioHandle, string src);
 
         [DllImport("wx", EntryPoint = "audio.get_src")]
-        private static extern string GetSrc(IntPtr audioHandle);
+        private static extern string GetSrcInternal(IntPtr audioHandle);
 
 
         [DllImport("wx", EntryPoint = "audio.set_loop")]
-        private static extern void SetLoop(IntPtr audioHandle, bool loop);
+        private static extern void SetLoopInternal(IntPtr audioHandle, bool loop);
 
         [DllImport("wx", EntryPoint = "audio.get_loop")]
-        private static extern bool GetLoop(IntPtr audioHandle);
+        private static extern bool GetLoopInternal(IntPtr audioHandle);
 
         [DllImport("wx", EntryPoint = "audio.set_autoplay")]
-        private static extern void SetAutoPlay(IntPtr audioHandle, bool autoplay);
+        private static extern void SetAutoPlayInternal(IntPtr audioHandle, bool autoplay);
         [DllImport("wx", EntryPoint = "audio.get_autoplay")]
-        private static extern bool GetAutoPlay(IntPtr audioHandle);
+        private static extern bool GetAutoPlayInternal(IntPtr audioHandle);
 
 
         [DllImport("wx", EntryPoint = "audio.set_currentTime")]
-        private static extern void SetCurrentTime(IntPtr audioHandle, float currentTime);
+        private static extern void SetCurrentTimeInternal(IntPtr audioHandle, float currentTime);
         [DllImport("wx", EntryPoint = "audio.get_currentTime")]
-        private static extern float GetCurrentTime(IntPtr audioHandle);
+        private static extern float GetCurrentTimeInternal(IntPtr audioHandle);
 
 
 
         [DllImport("wx", EntryPoint = "audio.play")]
         private static extern void PlayInternal(IntPtr audioHandle);
+
+        [DllImport("wx", EntryPoint = "audio.pause")]
+        private static extern void PauseInternal(IntPtr audioHandle);
+        [DllImport("wx", EntryPoint = "audio.stop")]
+        private static extern void StopInternal(IntPtr audioHandle);
     }
 }

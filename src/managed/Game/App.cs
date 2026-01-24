@@ -18,6 +18,7 @@ namespace Game
             var ctx2d = canvas.Context2D;
 
             Background.Ins.Start();
+            Music.Ins.Start();
         }
 
         public static void Update()

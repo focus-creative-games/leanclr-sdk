@@ -2,6 +2,7 @@
 
 namespace Game
 {
+
     class Background
     {
         const string src = "images/bg.jpg";

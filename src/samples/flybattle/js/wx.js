@@ -1792,6 +1792,17 @@ function create_image() { var img = wx.createImage(); return Module.pinvokes.get
 function set_image_src(imgHandle,src,len) { let arr = HEAPU16.subarray(src >> 1, (src >> 1) + len); let jsSrc = String.fromCharCode.apply(null, arr); let img = Module.pinvokes.get_object_by_id(imgHandle); img.src = jsSrc; }
 function get_image_width(imgHandle) { let img = Module.pinvokes.get_object_by_id(imgHandle); return img.width; }
 function get_image_height(imgHandle) { let img = Module.pinvokes.get_object_by_id(imgHandle); return img.height; }
+function audio_create_impl() { return Module.pinvokes.get_id_for_object(wx.createInnerAudioContext()); }
+function audio_set_src_impl(audioHandle,src,len) { let arr = HEAPU16.subarray(src >> 1, (src >> 1) + len); let jsSrc = String.fromCharCode.apply(null, arr); let audio = Module.pinvokes.get_object_by_id(audioHandle); if (audio) audio.src = jsSrc; }
+function audio_set_loop_impl(audioHandle,loop) { let audio = Module.pinvokes.get_object_by_id(audioHandle); if (audio) audio.loop = !!loop; }
+function audio_get_loop_impl(audioHandle) { let audio = Module.pinvokes.get_object_by_id(audioHandle); return audio && audio.loop ? 1 : 0; }
+function audio_set_autoplay_impl(audioHandle,autoplay) { let audio = Module.pinvokes.get_object_by_id(audioHandle); if (audio) audio.autoplay = !!autoplay; }
+function audio_get_autoplay_impl(audioHandle) { let audio = Module.pinvokes.get_object_by_id(audioHandle); return audio && audio.autoplay ? 1 : 0; }
+function audio_set_current_time_impl(audioHandle,currentTime) { let audio = Module.pinvokes.get_object_by_id(audioHandle); if (audio) audio.currentTime = currentTime; }
+function audio_get_current_time_impl(audioHandle) { let audio = Module.pinvokes.get_object_by_id(audioHandle); return audio && audio.currentTime ? audio.currentTime : 0.0; }
+function audio_play_impl(audioHandle) { let audio = Module.pinvokes.get_object_by_id(audioHandle); if (audio && audio.play) audio.play(); }
+function audio_pause_impl(audioHandle) { let audio = Module.pinvokes.get_object_by_id(audioHandle); if (audio && audio.pause) audio.pause(); }
+function audio_stop_impl(audioHandle) { let audio = Module.pinvokes.get_object_by_id(audioHandle); if (audio && audio.stop) audio.stop(); }
 
 // Imports from the Wasm binary.
 var _allocate_bytes = Module['_allocate_bytes'] = makeInvalidEarlyAccess('_allocate_bytes');
@@ -1834,6 +1845,28 @@ var wasmImports = {
   __cxa_throw: ___cxa_throw,
   /** @export */
   _abort_js: __abort_js,
+  /** @export */
+  audio_create_impl,
+  /** @export */
+  audio_get_autoplay_impl,
+  /** @export */
+  audio_get_current_time_impl,
+  /** @export */
+  audio_get_loop_impl,
+  /** @export */
+  audio_pause_impl,
+  /** @export */
+  audio_play_impl,
+  /** @export */
+  audio_set_autoplay_impl,
+  /** @export */
+  audio_set_current_time_impl,
+  /** @export */
+  audio_set_loop_impl,
+  /** @export */
+  audio_set_src_impl,
+  /** @export */
+  audio_stop_impl,
   /** @export */
   canvas_context_clear_rect_impl,
   /** @export */

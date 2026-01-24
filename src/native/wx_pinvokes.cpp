@@ -1,5 +1,4 @@
 
-
 #include "wx_pinvoke.h"
 
 #include "public/leanclr.hpp"
@@ -139,6 +138,58 @@ namespace wx
         let img = Module.pinvokes.get_object_by_id(imgHandle);
         return img.height;
     });
+    EM_JS(intptr_t, audio_create_impl, (), {
+        return Module.pinvokes.get_id_for_object(wx.createInnerAudioContext());
+    });
+    EM_JS(void, audio_set_src_impl, (intptr_t audioHandle, const uint16_t *src, size_t len), {
+        let arr = HEAPU16.subarray(src >> 1, (src >> 1) + len);
+        let jsSrc = String.fromCharCode.apply(null, arr);
+        let audio = Module.pinvokes.get_object_by_id(audioHandle);
+        if (audio)
+            audio.src = jsSrc;
+    });
+    EM_JS(void, audio_set_loop_impl, (intptr_t audioHandle, int32_t loop), {
+        let audio = Module.pinvokes.get_object_by_id(audioHandle);
+        if (audio)
+            audio.loop = !!loop;
+    });
+    EM_JS(int32_t, audio_get_loop_impl, (intptr_t audioHandle), {
+        let audio = Module.pinvokes.get_object_by_id(audioHandle);
+        return audio && audio.loop ? 1 : 0;
+    });
+    EM_JS(void, audio_set_autoplay_impl, (intptr_t audioHandle, int32_t autoplay), {
+        let audio = Module.pinvokes.get_object_by_id(audioHandle);
+        if (audio)
+            audio.autoplay = !!autoplay;
+    });
+    EM_JS(int32_t, audio_get_autoplay_impl, (intptr_t audioHandle), {
+        let audio = Module.pinvokes.get_object_by_id(audioHandle);
+        return audio && audio.autoplay ? 1 : 0;
+    });
+    EM_JS(void, audio_set_current_time_impl, (intptr_t audioHandle, float currentTime), {
+        let audio = Module.pinvokes.get_object_by_id(audioHandle);
+        if (audio)
+            audio.currentTime = currentTime;
+    });
+    EM_JS(float, audio_get_current_time_impl, (intptr_t audioHandle), {
+        let audio = Module.pinvokes.get_object_by_id(audioHandle);
+        return audio && audio.currentTime ? audio.currentTime : 0.0;
+    });
+    EM_JS(void, audio_play_impl, (intptr_t audioHandle), {
+        let audio = Module.pinvokes.get_object_by_id(audioHandle);
+        if (audio && audio.play)
+            audio.play();
+    });
+    EM_JS(void, audio_pause_impl, (intptr_t audioHandle), {
+        let audio = Module.pinvokes.get_object_by_id(audioHandle);
+        if (audio && audio.pause)
+            audio.pause();
+    });
+    EM_JS(void, audio_stop_impl, (intptr_t audioHandle), {
+        let audio = Module.pinvokes.get_object_by_id(audioHandle);
+        if (audio && audio.stop)
+            audio.stop();
+    });
 #else
     void console_log_impl(const uint16_t *msg, size_t length) {}
     void console_err_impl(const uint16_t *msg, size_t length) {}
@@ -164,6 +215,18 @@ namespace wx
     void set_image_src(intptr_t, const uint16_t *, size_t) {}
     int32_t get_image_width(intptr_t) { return 0; }
     int32_t get_image_height(intptr_t) { return 0; }
+
+    intptr_t audio_create_impl() { return 0; }
+    void audio_set_src_impl(intptr_t, const uint16_t *, size_t) {}
+    void audio_set_loop_impl(intptr_t, int32_t) {}
+    int32_t audio_get_loop_impl(intptr_t) { return 0; }
+    void audio_set_autoplay_impl(intptr_t, int32_t) {}
+    int32_t audio_get_autoplay_impl(intptr_t) { return 0; }
+    void audio_set_current_time_impl(intptr_t, float) {}
+    float audio_get_current_time_impl(intptr_t) { return 0.0f; }
+    void audio_play_impl(intptr_t) {}
+    void audio_pause_impl(intptr_t) {}
+    void audio_stop_impl(intptr_t) {}
 #endif
 
     void console_log(vm::RtString *msg)
@@ -260,6 +323,18 @@ namespace wx
     {
         return get_image_height(imgHandle);
     }
+
+    intptr_t audio_create() { return audio_create_impl(); }
+    void audio_set_src(intptr_t audioHandle, const uint16_t *src, size_t len) { audio_set_src_impl(audioHandle, src, len); }
+    void audio_set_loop(intptr_t audioHandle, int32_t loop) { audio_set_loop_impl(audioHandle, loop); }
+    int32_t audio_get_loop(intptr_t audioHandle) { return audio_get_loop_impl(audioHandle); }
+    void audio_set_autoplay(intptr_t audioHandle, int32_t autoplay) { audio_set_autoplay_impl(audioHandle, autoplay); }
+    int32_t audio_get_autoplay(intptr_t audioHandle) { return audio_get_autoplay_impl(audioHandle); }
+    void audio_set_current_time(intptr_t audioHandle, float currentTime) { audio_set_current_time_impl(audioHandle, currentTime); }
+    float audio_get_current_time(intptr_t audioHandle) { return audio_get_current_time_impl(audioHandle); }
+    void audio_play(intptr_t audioHandle) { audio_play_impl(audioHandle); }
+    void audio_pause(intptr_t audioHandle) { audio_pause_impl(audioHandle); }
+    void audio_stop(intptr_t audioHandle) { audio_stop_impl(audioHandle); }
 
     // invoker
 
@@ -447,6 +522,91 @@ namespace wx
         RET_VOID_OK();
     }
 
+    RtResultVoid audio_create_invoker(metadata::RtManagedMethodPointer, const metadata::RtMethodInfo *, const interp::RtStackObject *params, interp::RtStackObject *ret)
+    {
+        intptr_t handle = audio_create();
+        RuntimeApi::set_return_value<intptr_t>(ret, handle);
+        RET_VOID_OK();
+    }
+    RtResultVoid audio_set_src_invoker(metadata::RtManagedMethodPointer, const metadata::RtMethodInfo *, const interp::RtStackObject *params, interp::RtStackObject *ret)
+    {
+        size_t offset = 0;
+        intptr_t handle = RuntimeApi::get_argument<intptr_t>(params, offset);
+        auto str = RuntimeApi::get_argument<vm::RtString *>(params, offset);
+        if (str)
+            audio_set_src(handle, vm::String::get_chars_ptr(str), vm::String::get_length(str));
+        RET_VOID_OK();
+    }
+    RtResultVoid audio_set_loop_invoker(metadata::RtManagedMethodPointer, const metadata::RtMethodInfo *, const interp::RtStackObject *params, interp::RtStackObject *ret)
+    {
+        size_t offset = 0;
+        intptr_t handle = RuntimeApi::get_argument<intptr_t>(params, offset);
+        int32_t loop = RuntimeApi::get_argument<int32_t>(params, offset);
+        audio_set_loop(handle, loop);
+        RET_VOID_OK();
+    }
+    RtResultVoid audio_get_loop_invoker(metadata::RtManagedMethodPointer, const metadata::RtMethodInfo *, const interp::RtStackObject *params, interp::RtStackObject *ret)
+    {
+        size_t offset = 0;
+        intptr_t handle = RuntimeApi::get_argument<intptr_t>(params, offset);
+        int32_t result = audio_get_loop(handle);
+        RuntimeApi::set_return_value<int32_t>(ret, result);
+        RET_VOID_OK();
+    }
+    RtResultVoid audio_set_autoplay_invoker(metadata::RtManagedMethodPointer, const metadata::RtMethodInfo *, const interp::RtStackObject *params, interp::RtStackObject *ret)
+    {
+        size_t offset = 0;
+        intptr_t handle = RuntimeApi::get_argument<intptr_t>(params, offset);
+        int32_t autoplay = RuntimeApi::get_argument<int32_t>(params, offset);
+        audio_set_autoplay(handle, autoplay);
+        RET_VOID_OK();
+    }
+    RtResultVoid audio_get_autoplay_invoker(metadata::RtManagedMethodPointer, const metadata::RtMethodInfo *, const interp::RtStackObject *params, interp::RtStackObject *ret)
+    {
+        size_t offset = 0;
+        intptr_t handle = RuntimeApi::get_argument<intptr_t>(params, offset);
+        int32_t result = audio_get_autoplay(handle);
+        RuntimeApi::set_return_value<int32_t>(ret, result);
+        RET_VOID_OK();
+    }
+    RtResultVoid audio_set_current_time_invoker(metadata::RtManagedMethodPointer, const metadata::RtMethodInfo *, const interp::RtStackObject *params, interp::RtStackObject *ret)
+    {
+        size_t offset = 0;
+        intptr_t handle = RuntimeApi::get_argument<intptr_t>(params, offset);
+        float currentTime = RuntimeApi::get_argument<float>(params, offset);
+        audio_set_current_time(handle, currentTime);
+        RET_VOID_OK();
+    }
+    RtResultVoid audio_get_current_time_invoker(metadata::RtManagedMethodPointer, const metadata::RtMethodInfo *, const interp::RtStackObject *params, interp::RtStackObject *ret)
+    {
+        size_t offset = 0;
+        intptr_t handle = RuntimeApi::get_argument<intptr_t>(params, offset);
+        float result = audio_get_current_time(handle);
+        RuntimeApi::set_return_value<float>(ret, result);
+        RET_VOID_OK();
+    }
+    RtResultVoid audio_play_invoker(metadata::RtManagedMethodPointer, const metadata::RtMethodInfo *, const interp::RtStackObject *params, interp::RtStackObject *ret)
+    {
+        size_t offset = 0;
+        intptr_t handle = RuntimeApi::get_argument<intptr_t>(params, offset);
+        audio_play(handle);
+        RET_VOID_OK();
+    }
+    RtResultVoid audio_pause_invoker(metadata::RtManagedMethodPointer, const metadata::RtMethodInfo *, const interp::RtStackObject *params, interp::RtStackObject *ret)
+    {
+        size_t offset = 0;
+        intptr_t handle = RuntimeApi::get_argument<intptr_t>(params, offset);
+        audio_pause(handle);
+        RET_VOID_OK();
+    }
+    RtResultVoid audio_stop_invoker(metadata::RtManagedMethodPointer, const metadata::RtMethodInfo *, const interp::RtStackObject *params, interp::RtStackObject *ret)
+    {
+        size_t offset = 0;
+        intptr_t handle = RuntimeApi::get_argument<intptr_t>(params, offset);
+        audio_stop(handle);
+        RET_VOID_OK();
+    }
+
     struct PInvokeRegistration
     {
         const char *name;
@@ -479,6 +639,18 @@ namespace wx
         {"[WxSdk]Wx.Image::SetImageSrcInternal", (vm::PInvokeFunction)(&set_image_src_internal), set_image_src_internal_invoker},
         {"[WxSdk]Wx.Image::GetImageWidthInternal", (vm::PInvokeFunction)(&get_image_width_internal), get_image_width_internal_invoker},
         {"[WxSdk]Wx.Image::GetImageHeightInternal", (vm::PInvokeFunction)(&get_image_height_internal), get_image_height_internal_invoker},
+        // AudioContext P/Invoke
+        {"[WxSdk]Wx.AudioContext::CreateAudioInternal", (vm::PInvokeFunction)(&audio_create), audio_create_invoker},
+        {"[WxSdk]Wx.AudioContext::SetSrcInternal", (vm::PInvokeFunction)(&audio_set_src), audio_set_src_invoker},
+        {"[WxSdk]Wx.AudioContext::SetLoopInternal", (vm::PInvokeFunction)(&audio_set_loop), audio_set_loop_invoker},
+        {"[WxSdk]Wx.AudioContext::GetLoopInternal", (vm::PInvokeFunction)(&audio_get_loop), audio_get_loop_invoker},
+        {"[WxSdk]Wx.AudioContext::SetAutoPlayInternal", (vm::PInvokeFunction)(&audio_set_autoplay), audio_set_autoplay_invoker},
+        {"[WxSdk]Wx.AudioContext::GetAutoPlayInternal", (vm::PInvokeFunction)(&audio_get_autoplay), audio_get_autoplay_invoker},
+        {"[WxSdk]Wx.AudioContext::SetCurrentTimeInternal", (vm::PInvokeFunction)(&audio_set_current_time), audio_set_current_time_invoker},
+        {"[WxSdk]Wx.AudioContext::GetCurrentTimeInternal", (vm::PInvokeFunction)(&audio_get_current_time), audio_get_current_time_invoker},
+        {"[WxSdk]Wx.AudioContext::PlayInternal", (vm::PInvokeFunction)(&audio_play), audio_play_invoker},
+        {"[WxSdk]Wx.AudioContext::PauseInternal", (vm::PInvokeFunction)(&audio_pause), audio_pause_invoker},
+        {"[WxSdk]Wx.AudioContext::StopInternal", (vm::PInvokeFunction)(&audio_stop), audio_stop_invoker},
     };
 
     void initialize_wx_pinvokes()
