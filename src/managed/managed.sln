@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeanCLRSdk", "LeanCLRSdk\LeanCLRSdk.csproj", "{A098E4A9-8B0E-4612-A75E-0AE2061E70FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WxSdk", "WxSdk\WxSdk.csproj", "{A098E4A9-8B0E-4612-A75E-0AE2061E70FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{C21715A1-3608-4428-8F85-8BFFAC123231}"
 EndProject

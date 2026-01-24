@@ -1,4 +1,4 @@
-namespace LeanCLRSdk
+namespace Wx
 {
     public class Animation
     {

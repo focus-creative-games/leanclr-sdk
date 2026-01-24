@@ -3,8 +3,8 @@
     <OutputType>Library</OutputType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
-    <AssemblyName>LeanCLRSdk</AssemblyName>
-    <RootNamespace>LeanCLRSdk</RootNamespace>
+    <AssemblyName>WxSdk</AssemblyName>
+    <RootNamespace>WxSdk</RootNamespace>
     <!-- 禁止自动引用系统 mscorlib -->
     <NoStandardLib>true</NoStandardLib>
     <NoConfig>true</NoConfig>

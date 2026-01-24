@@ -2,7 +2,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace LeanCLRSdk
+namespace Wx
 {
     public class Canvas
     {

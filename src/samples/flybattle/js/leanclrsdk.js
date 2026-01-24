@@ -17,8 +17,8 @@ export default class LeanCLRSdk {
       "mscorlib.dll",
       "System.dll",
       "System.Core.dll",
-      "LeanCLRSdk.dll",
-      "LeanCLRSdk.pdb",
+      "WxSdk.dll",
+      "WxSdk.pdb",
       "Game.dll",
       "Game.pdb",
     ];
