@@ -7,9 +7,11 @@ namespace Wx
 
     public class CanvasContext
     {
+        private readonly Canvas _canvas;
         private readonly IntPtr _ctxHandle;
-        public CanvasContext(IntPtr ctxHandle)
+        public CanvasContext(Canvas canvas, IntPtr ctxHandle)
         {
+            _canvas = canvas;
             _ctxHandle = ctxHandle;
         }
 
@@ -21,6 +23,12 @@ namespace Wx
         public void DrawImage(Image img, double dx, double dy, double dWidth, double dHeight)
         {
             DrawImageInternal(_ctxHandle, img.Handle, dx, dy, dWidth, dHeight);
+        }
+
+
+        public void DrawImage2(Image img, double dx, double dy, double dWidth, double dHeight, double screenX, double screenY, double screenWidth, double screenHeight)
+        {
+            DrawImage2Internal(_ctxHandle, img.Handle, dx, dy, dWidth, dHeight, screenX, screenY, screenWidth, screenHeight);
         }
 
         public string Font
@@ -44,6 +52,12 @@ namespace Wx
 
         [DllImport("wx", EntryPoint = "canvas.drawImage")]
         private static extern void DrawImageInternal(IntPtr ctxHandle, IntPtr imgHandle, double dx, double dy, double dWidth, double dHeight);
+
+
+
+
+        [DllImport("wx", EntryPoint = "canvas.drawImage2")]
+        private static extern void DrawImage2Internal(IntPtr ctxHandle, IntPtr imgHandle, double dx, double dy, double dWidth, double dHeight, double screenX, double screenY, double screenWidth, double sceenHeight);
 
         [DllImport("wx", EntryPoint = "canvas.setFont")]
         private static extern void SetFontInternal(IntPtr ctxHandle, string font);

@@ -79,6 +79,7 @@ export default class LeanCLRSdk {
       this.wasmModule = await createStartupModule(Module);
       console.log("WASM 加载成功");
       this.setupLoadAssemblyFile();
+      this.setupPinvokeContexts();
     } catch (err) {
       console.error("WASM 初始化失败", err);
       throw err;
@@ -86,20 +87,39 @@ export default class LeanCLRSdk {
   }
 
   setupLoadAssemblyFile() {
-    // 参考 index.html，WASM 侧会调用此回调获取程序集数据
-    // 这里假设 wx.wasm 导出 setLoadAssemblyFile(cb) 或类似机制
-    // 伪代码：this.wasmModule.setLoadAssemblyFile(this.loadAssemblyFile.bind(this));
-    // 实际API需根据 wx.wasm 导出接口调整
-    if (
-      this.wasmModule &&
-      typeof this.wasmModule.setLoadAssemblyFile === "function"
-    ) {
-      this.wasmModule.setLoadAssemblyFile(this.loadAssemblyFile.bind(this));
-    } else {
-      // 如果是通过 imports 传递，可以在创建 WASM 时传递
-      // 或者直接在全局注册
-      this.wasmModule.load_assembly_file = this.loadAssemblyFile.bind(this);
+    if (!this.wasmModule) {
+      console.error("WASM 未初始化，无法设置 load_assembly_file 回调");
+      return;
     }
+    // if (typeof this.wasmModule.setLoadAssemblyFile === "function") {
+    //   this.wasmModule.setLoadAssemblyFile(this.loadAssemblyFile.bind(this));
+    // } else {
+    this.wasmModule.load_assembly_file = this.loadAssemblyFile.bind(this);
+    // }
+  }
+
+  object2idMap = new Map();
+  id2objectMap = new Map();
+
+  get_id_for_object(obj) {
+    if (this.object2idMap.has(obj)) {
+      return this.object2idMap.get(obj);
+    }
+    const id = this.object2idMap.size + 1; // 从1开始分配ID
+    this.object2idMap.set(obj, id);
+    this.id2objectMap.set(id, obj);
+    return id;
+  }
+
+  get_object_by_id(id) {
+    return this.id2objectMap.get(id);
+  }
+
+  setupPinvokeContexts() {
+    this.wasmModule.pinvokes = {
+      get_id_for_object: this.get_id_for_object.bind(this),
+      get_object_by_id: this.get_object_by_id.bind(this),
+    };
   }
 
   // name: 程序集名（含扩展名），extension: 扩展名，bufPtr/sizePtr: WASM 内存指针
@@ -217,5 +237,7 @@ export default class LeanCLRSdk {
     //this.invoke_method(this.gameAssembly, "Game.App", "Update");
   }
 
-  render() {}
+  render() {
+    this.invoke_method(this.gameAssembly, "Game.App", "Render");
+  }
 }

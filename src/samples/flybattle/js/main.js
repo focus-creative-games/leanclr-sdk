@@ -1,9 +1,9 @@
-import "./render"; // 初始化Canvas
+// import "./render"; // 初始化Canvas
 
 import LeanCLRSdk from "./leanclrsdk";
 
 const ENEMY_GENERATE_INTERVAL = 30;
-const ctx = canvas.getContext("2d"); // 获取canvas的2D绘图上下文;
+// const ctx = canvas.getContext("2d"); // 获取canvas的2D绘图上下文;
 
 // GameGlobal.databus = new DataBus(); // 全局数据管理，用于管理游戏状态和数据
 // GameGlobal.musicManager = new Music(); // 全局音乐管理实例
@@ -84,7 +84,7 @@ export default class Main {
    * 每一帧重新绘制所有的需要展示的元素
    */
   render() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // 清空画布
+    // ctx.clearRect(0, 0, canvas.width, canvas.height); // 清空画布
     this.leanclrSdk.render();
 
     // this.bg.render(ctx); // 绘制背景

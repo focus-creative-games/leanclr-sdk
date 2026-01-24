@@ -10,7 +10,7 @@ namespace Wx
 
         private bool _visible;
 
-        public Sprite(Image image, double x, double y, double width, double height)
+        public Sprite(Image image, double width, double height, double x, double y)
         {
             _image = image;
             _x = x;

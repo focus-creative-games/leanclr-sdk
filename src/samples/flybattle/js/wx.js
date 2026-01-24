@@ -1776,6 +1776,13 @@ function console_log_impl(msg,length) { if (!msg || !length) return; let arr = H
 function console_err_impl(msg,length) { if (!msg || !length) return; let arr = HEAPU16.subarray(msg >> 1, (msg >> 1) + length); let jsStr = String.fromCharCode.apply(null, arr); console.error(jsStr); }
 function screen_info_get_screen_width() { const windowInfo = wx.getWindowInfo ? wx.getWindowInfo() : wx.getSystemInfoSync(); return windowInfo.screenWidth; }
 function screen_info_get_screen_height() { const windowInfo = wx.getWindowInfo ? wx.getWindowInfo() : wx.getSystemInfoSync(); return windowInfo.screenHeight; }
+function canvas_create_canvas_impl() { var canvas = wx.createCanvas(); return Module.pinvokes.get_id_for_object(canvas); }
+function canvas_get_context_impl(canvasHandle,ctxName,len) { let arr = HEAPU16.subarray(ctxName >> 1, (ctxName >> 1) + len); let name = String.fromCharCode.apply(null, arr); var canvas = Module.pinvokes.get_object_by_id(canvasHandle); var ctx = canvas.getContext(name); return Module.pinvokes.get_id_for_object(ctx); }
+function canvas_context_clear_rect_impl(ctxHandle,x,y,w,h) { let ctx = Module.pinvokes.get_object_by_id(ctxHandle); ctx.clearRect(x, y, w, h); }
+function canvas_context_draw_image_impl(ctxHandle,imgHandle,dx,dy,dWidth,dHeight) { let ctx = Module.pinvokes.get_object_by_id(ctxHandle); let img = Module.pinvokes.get_object_by_id(imgHandle); ctx.drawImage(img, dx, dy, dWidth, dHeight); }
+function canvas_context_set_font_impl(ctxHandle,font,len) { let arr = HEAPU16.subarray(font >> 1, (font >> 1) + len); let jsFont = String.fromCharCode.apply(null, arr); let ctx = Module.pinvokes.get_object_by_id(ctxHandle); ctx.font = jsFont; }
+function canvas_context_set_fill_style_impl(ctxHandle,fillStyle,len) { let arr = HEAPU16.subarray(fillStyle >> 1, (fillStyle >> 1) + len); let jsFill = String.fromCharCode.apply(null, arr); let ctx = Module.pinvokes.get_object_by_id(ctxHandle); ctx.fillStyle = jsFill; }
+function canvas_context_fill_text_impl(ctxHandle,text,len,x,y) { let arr = HEAPU16.subarray(text >> 1, (text >> 1) + len); let jsText = String.fromCharCode.apply(null, arr); let ctx = Module.pinvokes.get_object_by_id(ctxHandle); ctx.fillText(jsText, x, y); }
 
 // Imports from the Wasm binary.
 var _allocate_bytes = Module['_allocate_bytes'] = makeInvalidEarlyAccess('_allocate_bytes');
@@ -1818,6 +1825,20 @@ var wasmImports = {
   __cxa_throw: ___cxa_throw,
   /** @export */
   _abort_js: __abort_js,
+  /** @export */
+  canvas_context_clear_rect_impl,
+  /** @export */
+  canvas_context_draw_image_impl,
+  /** @export */
+  canvas_context_fill_text_impl,
+  /** @export */
+  canvas_context_set_fill_style_impl,
+  /** @export */
+  canvas_context_set_font_impl,
+  /** @export */
+  canvas_create_canvas_impl,
+  /** @export */
+  canvas_get_context_impl,
   /** @export */
   clock_time_get: _clock_time_get,
   /** @export */
