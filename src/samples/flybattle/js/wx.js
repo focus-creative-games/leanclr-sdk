@@ -1778,11 +1778,20 @@ function screen_info_get_screen_width() { const windowInfo = wx.getWindowInfo ? 
 function screen_info_get_screen_height() { const windowInfo = wx.getWindowInfo ? wx.getWindowInfo() : wx.getSystemInfoSync(); return windowInfo.screenHeight; }
 function canvas_create_canvas_impl() { var canvas = wx.createCanvas(); return Module.pinvokes.get_id_for_object(canvas); }
 function canvas_get_context_impl(canvasHandle,ctxName,len) { let arr = HEAPU16.subarray(ctxName >> 1, (ctxName >> 1) + len); let name = String.fromCharCode.apply(null, arr); var canvas = Module.pinvokes.get_object_by_id(canvasHandle); var ctx = canvas.getContext(name); return Module.pinvokes.get_id_for_object(ctx); }
+function canvas_set_width_impl(canvasHandle,width) { let canvas = Module.pinvokes.get_object_by_id(canvasHandle); canvas.width = width; }
+function canvas_set_height_impl(canvasHandle,height) { let canvas = Module.pinvokes.get_object_by_id(canvasHandle); canvas.height = height; }
+function canvas_get_width_impl(canvasHandle) { let canvas = Module.pinvokes.get_object_by_id(canvasHandle); return canvas.width; }
+function canvas_get_height_impl(canvasHandle) { let canvas = Module.pinvokes.get_object_by_id(canvasHandle); return canvas.height; }
 function canvas_context_clear_rect_impl(ctxHandle,x,y,w,h) { let ctx = Module.pinvokes.get_object_by_id(ctxHandle); ctx.clearRect(x, y, w, h); }
 function canvas_context_draw_image_impl(ctxHandle,imgHandle,dx,dy,dWidth,dHeight) { let ctx = Module.pinvokes.get_object_by_id(ctxHandle); let img = Module.pinvokes.get_object_by_id(imgHandle); ctx.drawImage(img, dx, dy, dWidth, dHeight); }
+function canvas_context_draw_image_impl2(ctxHandle,imgHandle,dx,dy,dWidth,dHeight,screenX,screenY,screenWidth,screenHeight) { let ctx = Module.pinvokes.get_object_by_id(ctxHandle); let img = Module.pinvokes.get_object_by_id(imgHandle); ctx.drawImage(img, dx, dy, dWidth, dHeight, screenX, screenY, screenWidth, screenHeight); }
 function canvas_context_set_font_impl(ctxHandle,font,len) { let arr = HEAPU16.subarray(font >> 1, (font >> 1) + len); let jsFont = String.fromCharCode.apply(null, arr); let ctx = Module.pinvokes.get_object_by_id(ctxHandle); ctx.font = jsFont; }
 function canvas_context_set_fill_style_impl(ctxHandle,fillStyle,len) { let arr = HEAPU16.subarray(fillStyle >> 1, (fillStyle >> 1) + len); let jsFill = String.fromCharCode.apply(null, arr); let ctx = Module.pinvokes.get_object_by_id(ctxHandle); ctx.fillStyle = jsFill; }
 function canvas_context_fill_text_impl(ctxHandle,text,len,x,y) { let arr = HEAPU16.subarray(text >> 1, (text >> 1) + len); let jsText = String.fromCharCode.apply(null, arr); let ctx = Module.pinvokes.get_object_by_id(ctxHandle); ctx.fillText(jsText, x, y); }
+function create_image() { var img = wx.createImage(); return Module.pinvokes.get_id_for_object(img); }
+function set_image_src(imgHandle,src,len) { let arr = HEAPU16.subarray(src >> 1, (src >> 1) + len); let jsSrc = String.fromCharCode.apply(null, arr); let img = Module.pinvokes.get_object_by_id(imgHandle); img.src = jsSrc; }
+function get_image_width(imgHandle) { let img = Module.pinvokes.get_object_by_id(imgHandle); return img.width; }
+function get_image_height(imgHandle) { let img = Module.pinvokes.get_object_by_id(imgHandle); return img.height; }
 
 // Imports from the Wasm binary.
 var _allocate_bytes = Module['_allocate_bytes'] = makeInvalidEarlyAccess('_allocate_bytes');
@@ -1830,6 +1839,8 @@ var wasmImports = {
   /** @export */
   canvas_context_draw_image_impl,
   /** @export */
+  canvas_context_draw_image_impl2,
+  /** @export */
   canvas_context_fill_text_impl,
   /** @export */
   canvas_context_set_fill_style_impl,
@@ -1840,11 +1851,21 @@ var wasmImports = {
   /** @export */
   canvas_get_context_impl,
   /** @export */
+  canvas_get_height_impl,
+  /** @export */
+  canvas_get_width_impl,
+  /** @export */
+  canvas_set_height_impl,
+  /** @export */
+  canvas_set_width_impl,
+  /** @export */
   clock_time_get: _clock_time_get,
   /** @export */
   console_err_impl,
   /** @export */
   console_log_impl,
+  /** @export */
+  create_image,
   /** @export */
   emscripten_resize_heap: _emscripten_resize_heap,
   /** @export */
@@ -1854,11 +1875,17 @@ var wasmImports = {
   /** @export */
   fd_write: _fd_write,
   /** @export */
+  get_image_height,
+  /** @export */
+  get_image_width,
+  /** @export */
   load_assembly_file,
   /** @export */
   screen_info_get_screen_height,
   /** @export */
-  screen_info_get_screen_width
+  screen_info_get_screen_width,
+  /** @export */
+  set_image_src
 };
 var wasmExports = await createWasm();
 

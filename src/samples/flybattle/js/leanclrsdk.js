@@ -234,7 +234,7 @@ export default class LeanCLRSdk {
 
   update() {
     if (!this.wasmModule || !this.invoke_method || !this.gameAssembly) return;
-    //this.invoke_method(this.gameAssembly, "Game.App", "Update");
+    this.invoke_method(this.gameAssembly, "Game.App", "Update");
   }
 
   render() {

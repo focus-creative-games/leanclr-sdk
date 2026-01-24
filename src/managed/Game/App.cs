@@ -1,46 +1,7 @@
 ﻿using System.Diagnostics;
-using Wx;
 
 namespace Game
 {
-
-    class Background
-    {
-        const string src = "images/bg.jpg";
-        const int screenWidth = 512;
-        const int screenHeight = 512;
-        const int speed = 2;
-
-        private readonly Wx.Image _bg;
-        private int _width;
-        private int _height;
-        private int _top;
-
-        public static Background Ins = new Background();
-
-        Background()
-        {
-            _bg = new Image(src);
-            _width = screenWidth;
-            _height = screenHeight;
-            _top = 0;
-        }
-
-        public void Update()
-        {
-            _top += speed;
-            if (_top >= screenHeight)
-            {
-                _top = 0;
-            }
-        }
-
-        public void Render(CanvasContext c)
-        {
-            c.DrawImage2(_bg, 0.0, 0.0, (double)_width, (double)_height, 0.0, -screenHeight + _top, screenWidth, screenHeight);
-            c.DrawImage2(_bg, 0, 0, _width, _height, 0, _top, screenWidth, screenHeight);
-        }
-    }
 
     public class App
     {
@@ -51,7 +12,12 @@ namespace Game
             Wx.Console.Err("This is an error message from Wx.Console.");
             Wx.Console.Log($"Screen Width: {Wx.ScreenInfo.Width}, Height: {Wx.ScreenInfo.Height}");
             Wx.Canvas canvas = Wx.Canvas.Default;
+            canvas.Width = Wx.ScreenInfo.Width;
+            canvas.Height = Wx.ScreenInfo.Height;
+
             var ctx2d = canvas.Context2D;
+
+            Background.Ins.Start();
         }
 
         public static void Update()

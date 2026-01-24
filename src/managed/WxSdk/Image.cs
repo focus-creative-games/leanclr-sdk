@@ -17,16 +17,24 @@ namespace Wx
             }
             if (!string.IsNullOrEmpty(src))
             {
-                SetSrc(_imgHandle, src);
+                SetImageSrcInternal(_imgHandle, src);
             }
         }
 
         public IntPtr Handle => _imgHandle;
 
+        public int Width => GetImageWidthInternal(_imgHandle);
+        public int Height => GetImageHeightInternal(_imgHandle);
+
         [DllImport("wx", EntryPoint = "wx.createImage")]
         private static extern IntPtr CreateImageInternal();
 
         [DllImport("wx", EntryPoint = "image.set_src")]
-        private static extern void SetSrc(IntPtr imgHandle, string src);
+        private static extern void SetImageSrcInternal(IntPtr imgHandle, string src);
+
+        [DllImport("wx", EntryPoint = "image.get_width")]
+        private static extern int GetImageWidthInternal(IntPtr imgHandle);
+        [DllImport("wx", EntryPoint = "image.get_height")]
+        private static extern int GetImageHeightInternal(IntPtr imgHandle);
     }
 }

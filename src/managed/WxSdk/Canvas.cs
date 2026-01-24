@@ -78,6 +78,20 @@ namespace Wx
             }
         }
 
+
+
+        public int Width
+        {
+            get => GetWidthInternal(_canvasHandle);
+            set => SetWidthInternal(_canvasHandle, value);
+        }
+
+        public int Height
+        {
+            get => GetHeightInternal(_canvasHandle);
+            set => SetHeightInternal(_canvasHandle, value);
+        }
+
         private Canvas(IntPtr canvasHandle)
         {
             _canvasHandle = canvasHandle;
@@ -88,5 +102,14 @@ namespace Wx
 
         [DllImport("wx", EntryPoint = "canvas.getContext")]
         private static extern IntPtr GetContextInternal(IntPtr canvasHandle, string ctxName);
+
+        [DllImport("wx", EntryPoint = "canvas.getWidth")]
+        private static extern int GetWidthInternal(IntPtr canvasHandle);
+        [DllImport("wx", EntryPoint = "canvas.setWidth")]
+        private static extern void SetWidthInternal(IntPtr canvasHandle, int width);
+        [DllImport("wx", EntryPoint = "canvas.getHeight")]
+        private static extern int GetHeightInternal(IntPtr canvasHandle);
+        [DllImport("wx", EntryPoint = "canvas.setHeight")]
+        private static extern void SetHeightInternal(IntPtr canvasHandle, int height);
     }
 }
