@@ -1,4 +1,5 @@
 import createStartupModule from "./wx";
+import TextDecoder from './miniprogram-text-decoder';
 
 export default class LeanCLRSdk {
   async start() {
@@ -16,12 +17,12 @@ export default class LeanCLRSdk {
     // 需要加载的程序集列表
     const dllFiles = [
       "mscorlib.dll",
-      "System.dll",
-      "System.Core.dll",
+     // "System.dll",
+     // "System.Core.dll",
       "WxSdk.dll",
-      "WxSdk.pdb",
+      //"WxSdk.pdb",
       "Game.dll",
-      "Game.pdb",
+     // "Game.pdb",
     ];
     this.assemblyCache = {};
     const fs = wx.getFileSystemManager();
@@ -130,7 +131,7 @@ export default class LeanCLRSdk {
       let end = ptr;
       while (view[end] !== 0) end++;
       const bytes = view.slice(ptr, end);
-      return new TextDecoder("utf-8").decode(bytes);
+      return (new TextDecoder('utf-8')).decode(bytes);
     };
     const assemblyName = readCString(namePtr);
     const extension = readCString(extensionPtr);

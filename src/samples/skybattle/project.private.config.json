@@ -15,7 +15,7 @@
     "useLanDebug": false,
     "showES6CompileOption": false,
     "compileHotReLoad": false,
-    "bigPackageSizeSupport": false,
+    "bigPackageSizeSupport": true,
     "checkInvalidKey": true,
     "ignoreDevUnusedFiles": true
   },
