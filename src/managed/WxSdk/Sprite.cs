@@ -1,4 +1,4 @@
-namespace Wx
+namespace WxSdk
 {
     public class Sprite
     {

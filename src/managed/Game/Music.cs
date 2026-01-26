@@ -1,4 +1,4 @@
-﻿using Wx;
+﻿using WxSdk;
 
 namespace Game
 {

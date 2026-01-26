@@ -57,10 +57,12 @@ function processApiFile(filePath) {
   const html = fs.readFileSync(filePath, "utf-8");
   const $ = cheerio.load(html);
   const table = $("table").first();
-  if (!table.length) return null;
-  const mdTable = htmlTableToMarkdown($, table);
   const name = extractApiName($);
   const desc = extractApiDesc($);
+  if (!table.length) {
+    return { name, desc, mdTable: null };
+  }
+  const mdTable = htmlTableToMarkdown($, table);
   return { name, desc, mdTable };
 }
 
@@ -70,10 +72,13 @@ function main() {
   for (const file of files) {
     const filePath = path.join(apiDir, file);
     const api = processApiFile(filePath);
-    if (!api) continue;
     md += `\n### ${api.name}\n\n`;
-    if (api.desc) md += api.desc + "\n\n";
-    md += api.mdTable + "\n";
+    if (api.mdTable) {
+      if (api.desc) md += api.desc + "\n\n";
+      md += api.mdTable + "\n";
+    } else {
+      md += `[Link](api/${file})\n\n`;
+    }
   }
   fs.writeFileSync(outFile, md, "utf-8");
   console.log("已生成", outFile);

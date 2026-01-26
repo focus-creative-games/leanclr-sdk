@@ -1,4 +1,4 @@
-﻿using Wx;
+﻿using WxSdk;
 
 namespace Game
 {
@@ -10,10 +10,10 @@ namespace Game
         //const int screenHeight = 512;
         const int speed = 2;
 
-        private readonly Wx.Image _bg;
+        private readonly Image _bg;
 
-        private int _screenWidth = Wx.ScreenInfo.Width;
-        private int _screenHeight = Wx.ScreenInfo.Height;
+        private int _screenWidth = ScreenInfo.Width;
+        private int _screenHeight = ScreenInfo.Height;
         private int _width;
         private int _height;
         private int _top;

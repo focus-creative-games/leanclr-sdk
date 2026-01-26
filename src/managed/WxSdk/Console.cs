@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace Wx
+namespace WxSdk
 {
     public class Console
     {

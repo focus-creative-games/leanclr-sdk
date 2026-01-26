@@ -7,7 +7,7 @@
     <ProjectGuid>{A098E4A9-8B0E-4612-A75E-0AE2061E70FF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wx</RootNamespace>
+    <RootNamespace>WxSdk</RootNamespace>
     <AssemblyName>WxSdk</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

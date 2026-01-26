@@ -98,6 +98,41 @@
 |  | UserCryptoManager.getRandomValues | 获取密码学安全随机数 |
 
 
+### AudioBuffer
+
+[Link](api/AudioBuffer.html)
+
+
+### AudioBuffer.copyFromChannel()
+
+[Link](api/AudioBuffer_copyFromChannel.html)
+
+
+### AudioBuffer.copyToChannel(Float32Array source, number channelNumber, number startInChannel)
+
+[Link](api/AudioBuffer_copyToChannel.html)
+
+
+### Float32Array AudioBuffer.getChannelData(number channel)
+
+[Link](api/AudioBuffer_getChannelData.html)
+
+
+### AudioListener
+
+[Link](api/AudioListener.html)
+
+
+### AudioParam
+
+[Link](api/AudioParam.html)
+
+
+### AuthSetting
+
+[Link](api/AuthSetting.html)
+
+
 ### BannerAd
 
 banner 广告组件。banner 广告组件是一个原生组件，层级比普通组件高。banner 广告组件默认是隐藏的，需要调用 BannerAd.show() 将其显示。banner 广告会根据开发者设置的宽度进行等比缩放，缩放后的尺寸将通过 BannerAd.onResize() 事件中提供。
@@ -110,6 +145,31 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | height | number | banner 广告组件的高度 |
 | realWidth | number | banner 广告组件经过缩放后真实的宽度 |
 | realHeight | number | banner 广告组件经过缩放后真实的高度 |
+
+
+### BannerAd.destroy()
+
+[Link](api/BannerAd_destroy.html)
+
+
+### BannerAd.hide()
+
+[Link](api/BannerAd_hide.html)
+
+
+### BannerAd.offError(function listener)
+
+[Link](api/BannerAd_offError.html)
+
+
+### BannerAd.offLoad(function listener)
+
+[Link](api/BannerAd_offLoad.html)
+
+
+### BannerAd.offResize(function listener)
+
+[Link](api/BannerAd_offResize.html)
 
 
 ### BannerAd.onError(function listener)
@@ -133,6 +193,11 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | 1008 | 广告单元已关闭 |
 
 
+### BannerAd.onLoad(function listener)
+
+[Link](api/BannerAd_onLoad.html)
+
+
 ### BannerAd.onResize(function listener)
 
 # 功能描述
@@ -141,6 +206,11 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | --- | --- | --- |
 | width | number | 缩放后的宽度 |
 | height | number | 缩放后的高度 |
+
+
+### Promise BannerAd.show()
+
+[Link](api/BannerAd_show.html)
 
 
 ### BeaconInfo
@@ -153,6 +223,11 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | 1 | 十分近 |  |
 | 2 | 比较近 |  |
 | 3 | 远 |  |
+
+
+### BLEPeripheralServer
+
+[Link](api/BLEPeripheralServer.html)
 
 
 ### BLEPeripheralServer.addService(Object object)
@@ -198,6 +273,26 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 |  | success | function |  | 否 | 接口调用成功的回调函数 |
 |  | fail | function |  | 否 | 接口调用失败的回调函数 |
 |  | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+
+
+### BLEPeripheralServer.offCharacteristicReadRequest(function listener)
+
+[Link](api/BLEPeripheralServer_offCharacteristicReadRequest.html)
+
+
+### BLEPeripheralServer.offCharacteristicSubscribed(function listener)
+
+[Link](api/BLEPeripheralServer_offCharacteristicSubscribed.html)
+
+
+### BLEPeripheralServer.offCharacteristicUnsubscribed(function listener)
+
+[Link](api/BLEPeripheralServer_offCharacteristicUnsubscribed.html)
+
+
+### BLEPeripheralServer.offCharacteristicWriteRequest(function listener)
+
+[Link](api/BLEPeripheralServer_offCharacteristicWriteRequest.html)
 
 
 ### BLEPeripheralServer.onCharacteristicReadRequest(function listener)
@@ -317,6 +412,56 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### BufferSourceNode
+
+[Link](api/BufferSourceNode.html)
+
+
+### BufferSourceNode.connect(AudioNode|AudioParam destination)
+
+[Link](api/BufferSourceNode_connect.html)
+
+
+### BufferSourceNode.disconnect()
+
+[Link](api/BufferSourceNode_disconnect.html)
+
+
+### BufferSourceNode.start(number when, number offset, number duration)
+
+[Link](api/BufferSourceNode_start.html)
+
+
+### BufferSourceNode.stop(number when)
+
+[Link](api/BufferSourceNode_stop.html)
+
+
+### Camera
+
+[Link](api/Camera.html)
+
+
+### Camera.closeFrameChange()
+
+[Link](api/Camera_closeFrameChange.html)
+
+
+### Camera.destroy()
+
+[Link](api/Camera_destroy.html)
+
+
+### Camera.listenFrameChange(Worker worker)
+
+[Link](api/Camera_listenFrameChange.html)
+
+
+### Camera.onAuthCancel(function callback)
+
+[Link](api/Camera_onAuthCancel.html)
+
+
 ### Camera.onCameraFrame(function callback)
 
 基础库 2.9.0 开始支持，低版本需做兼容处理。
@@ -328,6 +473,11 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | data | ArrayBuffer | 图像像素点数据，一维数组，每四项表示一个像素点的 rgba |
 
 
+### Camera.onStop(function callback)
+
+[Link](api/Camera_onStop.html)
+
+
 ### Promise Camera.setZoom(Object args)
 
 基础库 3.9.2 开始支持，低版本需做兼容处理。
@@ -335,6 +485,31 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | 属性 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | --- | --- | --- |
 | zoom | number |  | 是 | 缩放级别，范围 [1, maxZoom]。zoom 可取小数，精确到小数后一位。maxZoom 可在 bindinitdone 返回值中获取。 |
+
+
+### Promise Camera.startRecord()
+
+[Link](api/Camera_startRecord.html)
+
+
+### Promise Camera.stopRecord(boolean compressed)
+
+[Link](api/Camera_stopRecord.html)
+
+
+### Promise Camera.takePhoto(string quality)
+
+[Link](api/Camera_takePhoto.html)
+
+
+### cancelAnimationFrame(number requestID)
+
+[Link](api/cancelAnimationFrame.html)
+
+
+### Canvas
+
+[Link](api/Canvas.html)
 
 
 ### RenderingContext Canvas.getContext(string contextType, Object contextAttributes)
@@ -346,6 +521,11 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | 2d | 2d 绘图上下文 |  |
 | webgl | webgl 绘图上下文 |  |
 | webgl2 | webgl2 绘图上下文 | 2.24.0 |
+
+
+### string Canvas.toDataURL()
+
+[Link](api/Canvas_toDataURL.html)
 
 
 ### Canvas.toTempFilePath(Object object)
@@ -391,6 +571,46 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 |  | quality | number | 1.0 | 否 | jpg图片的质量，仅当 fileType 为 jpg 时有效。取值范围为 0.0（最低）- 1.0（最高），不含 0。不在范围内时当作 1.0 |
 
 
+### console
+
+[Link](api/console.html)
+
+
+### console.debug()
+
+[Link](api/console_debug.html)
+
+
+### console.error()
+
+[Link](api/console_error.html)
+
+
+### console.group(string label)
+
+[Link](api/console_group.html)
+
+
+### console.groupEnd()
+
+[Link](api/console_groupEnd.html)
+
+
+### console.info()
+
+[Link](api/console_info.html)
+
+
+### console.log()
+
+[Link](api/console_log.html)
+
+
+### console.warn()
+
+[Link](api/console_warn.html)
+
+
 ### CustomAd
 
 原生模板广告组件。原生模板广告组件是一个原生组件，层级比普通组件高。原生模板广告组件默认是隐藏的，需要调用 CustomAd.show() 将其显示。如果宽度可配置，原生模板广告会根据开发者设置的宽度进行等比缩放，部分模板缩放后的尺寸会通过 CustomAd.onResize() 事件中提供。
@@ -400,6 +620,51 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | left | number | 原生模板广告组件的左上角横坐标 |
 | top | number | 原生模板广告组件的左上角纵坐标 |
 | fixed | boolean | (只对小程序适用) 原生模板广告组件是否固定屏幕位置（不跟随屏幕滚动） |
+
+
+### CustomAd.destroy()
+
+[Link](api/CustomAd_destroy.html)
+
+
+### Promise CustomAd.hide()
+
+[Link](api/CustomAd_hide.html)
+
+
+### boolean CustomAd.isShow()
+
+[Link](api/CustomAd_isShow.html)
+
+
+### CustomAd.offClose(function listener)
+
+[Link](api/CustomAd_offClose.html)
+
+
+### CustomAd.offError(function listener)
+
+[Link](api/CustomAd_offError.html)
+
+
+### CustomAd.offHide(function listener)
+
+[Link](api/CustomAd_offHide.html)
+
+
+### CustomAd.offLoad(function listener)
+
+[Link](api/CustomAd_offLoad.html)
+
+
+### CustomAd.offResize(function listener)
+
+[Link](api/CustomAd_offResize.html)
+
+
+### CustomAd.onClose(function listener)
+
+[Link](api/CustomAd_onClose.html)
 
 
 ### CustomAd.onError(function listener)
@@ -428,6 +693,16 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | 2005 | 触发频率限制 |
 
 
+### CustomAd.onHide(function listener)
+
+[Link](api/CustomAd_onHide.html)
+
+
+### CustomAd.onLoad(function listener)
+
+[Link](api/CustomAd_onLoad.html)
+
+
 ### CustomAd.onResize(function listener)
 
 # 功能描述
@@ -436,6 +711,31 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | --- | --- | --- |
 | width | number | 缩放后的宽度 |
 | height | number | 缩放后的高度 |
+
+
+### Promise CustomAd.show()
+
+[Link](api/CustomAd_show.html)
+
+
+### DownloadTask
+
+[Link](api/DownloadTask.html)
+
+
+### DownloadTask.abort()
+
+[Link](api/DownloadTask_abort.html)
+
+
+### DownloadTask.offHeadersReceived(function listener)
+
+[Link](api/DownloadTask_offHeadersReceived.html)
+
+
+### DownloadTask.offProgressUpdate(function listener)
+
+[Link](api/DownloadTask_offProgressUpdate.html)
 
 
 ### DownloadTask.onHeadersReceived(function listener)
@@ -466,6 +766,41 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | --- | --- | --- |
 | text | 可以设置背景色和文本的按钮 |  |
 | image | 只能设置背景贴图的按钮，背景贴图会直接拉伸到按钮的宽高 |  |
+
+
+### FeedbackButton.destroy()
+
+[Link](api/FeedbackButton_destroy.html)
+
+
+### FeedbackButton.hide()
+
+[Link](api/FeedbackButton_hide.html)
+
+
+### FeedbackButton.offTap(function listener)
+
+[Link](api/FeedbackButton_offTap.html)
+
+
+### FeedbackButton.onTap(function listener)
+
+[Link](api/FeedbackButton_onTap.html)
+
+
+### FeedbackButton.show()
+
+[Link](api/FeedbackButton_show.html)
+
+
+### FileStats
+
+[Link](api/FileStats.html)
+
+
+### FileSystemManager
+
+[Link](api/FileSystemManager.html)
 
 
 ### FileSystemManager.access(Object object)
@@ -1471,6 +1806,11 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 |  | position | number |  | 否 | 指定文件开头的偏移量，即数据要被写入的位置。当 position 不传或者传入非 Number 类型的值时，数据会被写入当前指针所在位置。 |
 
 
+### FriendInfo
+
+[Link](api/FriendInfo.html)
+
+
 ### FriendSendGiftStatus
 
 用户送礼状态信息
@@ -1491,6 +1831,41 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | white | 白色的图标 |  |
 | dark | 有黑色圆角背景的白色图标 |  |
 | light | 有白色圆角背景的绿色图标 |  |
+
+
+### GameClubButton.destroy()
+
+[Link](api/GameClubButton_destroy.html)
+
+
+### GameClubButton.hide()
+
+[Link](api/GameClubButton_hide.html)
+
+
+### GameClubButton.offTap(function listener)
+
+[Link](api/GameClubButton_offTap.html)
+
+
+### GameClubButton.onTap(function listener)
+
+[Link](api/GameClubButton_onTap.html)
+
+
+### GameClubButton.show()
+
+[Link](api/GameClubButton_show.html)
+
+
+### GameLogManager
+
+[Link](api/GameLogManager.html)
+
+
+### Object GameLogManager.getCommonInfo()
+
+[Link](api/GameLogManager_getCommonInfo.html)
 
 
 ### GameLogManager.log(Object param)
@@ -1517,6 +1892,11 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | warn | function | 上报 warn 级别的日志，仅支持传入日志内容。key 固定为 tag 传入的参数。 |
 | error | function | 上报 error 级别的日志，仅支持传入日志内容。key 固定为 tag 传入的参数。 |
 | debug | function | 上报 debug 级别的日志，仅支持传入日志内容。key 固定为 tag 传入的参数。 |
+
+
+### GameLogManager.updateCommonInfo(Object newCommonInfo)
+
+[Link](api/GameLogManager_updateCommonInfo.html)
 
 
 ### GameRecorder
@@ -1565,6 +1945,26 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | borderRadius | number | 按钮圆角大小，单位为逻辑像素。 |
 
 
+### GameRecorderShareButton.hide()
+
+[Link](api/GameRecorderShareButton_hide.html)
+
+
+### GameRecorderShareButton.offTap(function listener)
+
+[Link](api/GameRecorderShareButton_offTap.html)
+
+
+### GameRecorderShareButton.onTap(function listener)
+
+[Link](api/GameRecorderShareButton_onTap.html)
+
+
+### GameRecorderShareButton.show()
+
+[Link](api/GameRecorderShareButton_show.html)
+
+
 ### Promise GameRecorder.abort()
 
 基础库 2.8.0 开始支持，低版本需做兼容处理。
@@ -1591,6 +1991,26 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | 22623 | time range invalid | share.timeRange 不合法 |
 | 22633 | duration out of limit | share.timeRange 的所有片段的总和超出上限 |
 | 22643 | time range too short.It should be longer than 2s | share.timeRange 太短 |
+
+
+### boolean GameRecorder.isAtempoSupported()
+
+[Link](api/GameRecorder_isAtempoSupported.html)
+
+
+### boolean GameRecorder.isFrameSupported()
+
+[Link](api/GameRecorder_isFrameSupported.html)
+
+
+### boolean GameRecorder.isSoundSupported()
+
+[Link](api/GameRecorder_isSoundSupported.html)
+
+
+### boolean GameRecorder.isVolumeSupported()
+
+[Link](api/GameRecorder_isVolumeSupported.html)
 
 
 ### GameRecorder.off(string event, function callback)
@@ -1718,6 +2138,11 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | 22623 | time range invalid | share.timeRange 不合法 |
 | 22633 | duration out of limit | share.timeRange 的所有片段的总和超出上限 |
 | 22643 | time range too short.It should be longer than 2s | share.timeRange 太短 |
+
+
+### GameServerManager
+
+[Link](api/GameServerManager.html)
 
 
 ### Promise GameServerManager.broadcastInRoom(object object)
@@ -1884,6 +2309,16 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### Promise GameServerManager.login()
+
+[Link](api/GameServerManager_login.html)
+
+
+### Promise GameServerManager.logout()
+
+[Link](api/GameServerManager_logout.html)
+
+
 ### Promise GameServerManager.memberLeaveRoom(object object)
 
 以 Promise 风格 调用：不支持
@@ -1894,6 +2329,66 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | success | function |  | 否 | 接口调用成功的回调函数 |
 | fail | function |  | 否 | 接口调用失败的回调函数 |
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+
+
+### GameServerManager.offBeKickedOut(function listener)
+
+[Link](api/GameServerManager_offBeKickedOut.html)
+
+
+### GameServerManager.offBroadcast(function listener)
+
+[Link](api/GameServerManager_offBroadcast.html)
+
+
+### GameServerManager.offDisconnect(function listener)
+
+[Link](api/GameServerManager_offDisconnect.html)
+
+
+### GameServerManager.offGameEnd(function listener)
+
+[Link](api/GameServerManager_offGameEnd.html)
+
+
+### GameServerManager.offGameStart(function listener)
+
+[Link](api/GameServerManager_offGameStart.html)
+
+
+### GameServerManager.offInvite(function listener)
+
+[Link](api/GameServerManager_offInvite.html)
+
+
+### GameServerManager.offLockStepError(function listener)
+
+[Link](api/GameServerManager_offLockStepError.html)
+
+
+### GameServerManager.offLogout(function listener)
+
+[Link](api/GameServerManager_offLogout.html)
+
+
+### GameServerManager.offMatch(function listener)
+
+[Link](api/GameServerManager_offMatch.html)
+
+
+### GameServerManager.offRoomInfoChange(function listener)
+
+[Link](api/GameServerManager_offRoomInfoChange.html)
+
+
+### GameServerManager.offStateUpdate(function listener)
+
+[Link](api/GameServerManager_offStateUpdate.html)
+
+
+### GameServerManager.offSyncFrame(function listener)
+
+[Link](api/GameServerManager_offSyncFrame.html)
 
 
 ### GameServerManager.onBeKickedOut(function listener)
@@ -1939,6 +2434,11 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | gameAccessInfo | string | 游戏唯一标识，用于后台接口拉取对局记录 |
 
 
+### GameServerManager.onGameStart(function listener)
+
+[Link](api/GameServerManager_onGameStart.html)
+
+
 ### GameServerManager.onInvite(function listener)
 
 基础库 2.9.4 开始支持，低版本需做兼容处理。
@@ -1958,6 +2458,11 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | --- | --- | --- |
 | errCode | number | 错误码 |
 | errMsg | string | 错误原因 |
+
+
+### GameServerManager.onLogout(function listener)
+
+[Link](api/GameServerManager_onLogout.html)
 
 
 ### GameServerManager.onMatch(function listener)
@@ -2089,6 +2594,11 @@ banner 广告组件。banner 广告组件是一个原生组件，层级比普通
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### boolean GameServerManager.setInviteData(string data)
+
+[Link](api/GameServerManager_setInviteData.html)
+
+
 ### Promise GameServerManager.setState(object object)
 
 基础库 2.9.4 开始支持，低版本需做兼容处理。
@@ -2176,6 +2686,31 @@ grid(格子) 广告组件。grid(格子) 广告组件是一个原生组件，层
 | realHeight | number | grid(格子) 广告组件经过缩放后真实的高度 |
 
 
+### GridAd.destroy()
+
+[Link](api/GridAd_destroy.html)
+
+
+### GridAd.hide()
+
+[Link](api/GridAd_hide.html)
+
+
+### GridAd.offError(function listener)
+
+[Link](api/GridAd_offError.html)
+
+
+### GridAd.offLoad(function listener)
+
+[Link](api/GridAd_offLoad.html)
+
+
+### GridAd.offResize(function listener)
+
+[Link](api/GridAd_offResize.html)
+
+
 ### GridAd.onError(function listener)
 
 从基础库 2.30.2 开始，本接口停止维护
@@ -2197,6 +2732,11 @@ grid(格子) 广告组件。grid(格子) 广告组件是一个原生组件，层
 | 1008 | 广告单元已关闭 |
 
 
+### GridAd.onLoad(function listener)
+
+[Link](api/GridAd_onLoad.html)
+
+
 ### GridAd.onResize(function listener)
 
 从基础库 2.30.2 开始，本接口停止维护
@@ -2205,6 +2745,56 @@ grid(格子) 广告组件。grid(格子) 广告组件是一个原生组件，层
 | --- | --- | --- |
 | width | number | 缩放后的宽度 |
 | height | number | 缩放后的高度 |
+
+
+### Promise GridAd.show()
+
+[Link](api/GridAd_show.html)
+
+
+### Image
+
+[Link](api/Image.html)
+
+
+### ImageData
+
+[Link](api/ImageData.html)
+
+
+### InferenceSession
+
+[Link](api/InferenceSession.html)
+
+
+### InferenceSession.destroy()
+
+[Link](api/InferenceSession_destroy.html)
+
+
+### InferenceSession.offError(function callback)
+
+[Link](api/InferenceSession_offError.html)
+
+
+### InferenceSession.offLoad(function callback)
+
+[Link](api/InferenceSession_offLoad.html)
+
+
+### InferenceSession.onError(function callback)
+
+[Link](api/InferenceSession_onError.html)
+
+
+### InferenceSession.onLoad(function callback)
+
+[Link](api/InferenceSession_onLoad.html)
+
+
+### Promise<Tensors> InferenceSession.run(Tensors tensors)
+
+[Link](api/InferenceSession_run.html)
 
 
 ### InnerAudioContext
@@ -2227,6 +2817,71 @@ InnerAudioContext 实例，可通过 wx.createInnerAudioContext 接口获取实�
 | caf | √ | x |
 
 
+### InnerAudioContext.destroy()
+
+[Link](api/InnerAudioContext_destroy.html)
+
+
+### InnerAudioContext.offCanplay(function listener)
+
+[Link](api/InnerAudioContext_offCanplay.html)
+
+
+### InnerAudioContext.offEnded(function listener)
+
+[Link](api/InnerAudioContext_offEnded.html)
+
+
+### InnerAudioContext.offError(function listener)
+
+[Link](api/InnerAudioContext_offError.html)
+
+
+### InnerAudioContext.offPause(function listener)
+
+[Link](api/InnerAudioContext_offPause.html)
+
+
+### InnerAudioContext.offPlay(function listener)
+
+[Link](api/InnerAudioContext_offPlay.html)
+
+
+### InnerAudioContext.offSeeked(function listener)
+
+[Link](api/InnerAudioContext_offSeeked.html)
+
+
+### InnerAudioContext.offSeeking(function listener)
+
+[Link](api/InnerAudioContext_offSeeking.html)
+
+
+### InnerAudioContext.offStop(function listener)
+
+[Link](api/InnerAudioContext_offStop.html)
+
+
+### InnerAudioContext.offTimeUpdate(function listener)
+
+[Link](api/InnerAudioContext_offTimeUpdate.html)
+
+
+### InnerAudioContext.offWaiting(function listener)
+
+[Link](api/InnerAudioContext_offWaiting.html)
+
+
+### InnerAudioContext.onCanplay(function listener)
+
+[Link](api/InnerAudioContext_onCanplay.html)
+
+
+### InnerAudioContext.onEnded(function listener)
+
+[Link](api/InnerAudioContext_onEnded.html)
+
+
 ### InnerAudioContext.onError(function listener)
 
 # 功能描述
@@ -2242,6 +2897,96 @@ InnerAudioContext 实例，可通过 wx.createInnerAudioContext 接口获取实�
 | 10003 | 文件错误 |
 | 10004 | 格式错误 |
 | -1 | 未知错误 |
+
+
+### InnerAudioContext.onPause(function listener)
+
+[Link](api/InnerAudioContext_onPause.html)
+
+
+### InnerAudioContext.onPlay(function listener)
+
+[Link](api/InnerAudioContext_onPlay.html)
+
+
+### InnerAudioContext.onSeeked(function listener)
+
+[Link](api/InnerAudioContext_onSeeked.html)
+
+
+### InnerAudioContext.onSeeking(function listener)
+
+[Link](api/InnerAudioContext_onSeeking.html)
+
+
+### InnerAudioContext.onStop(function listener)
+
+[Link](api/InnerAudioContext_onStop.html)
+
+
+### InnerAudioContext.onTimeUpdate(function listener)
+
+[Link](api/InnerAudioContext_onTimeUpdate.html)
+
+
+### InnerAudioContext.onWaiting(function listener)
+
+[Link](api/InnerAudioContext_onWaiting.html)
+
+
+### InnerAudioContext.pause()
+
+[Link](api/InnerAudioContext_pause.html)
+
+
+### InnerAudioContext.play()
+
+[Link](api/InnerAudioContext_play.html)
+
+
+### InnerAudioContext.seek(number position)
+
+[Link](api/InnerAudioContext_seek.html)
+
+
+### InnerAudioContext.stop()
+
+[Link](api/InnerAudioContext_stop.html)
+
+
+### InterstitialAd
+
+[Link](api/InterstitialAd.html)
+
+
+### InterstitialAd.destroy()
+
+[Link](api/InterstitialAd_destroy.html)
+
+
+### Promise InterstitialAd.load()
+
+[Link](api/InterstitialAd_load.html)
+
+
+### InterstitialAd.offClose(function listener)
+
+[Link](api/InterstitialAd_offClose.html)
+
+
+### InterstitialAd.offError(function listener)
+
+[Link](api/InterstitialAd_offError.html)
+
+
+### InterstitialAd.offLoad(function listener)
+
+[Link](api/InterstitialAd_offLoad.html)
+
+
+### InterstitialAd.onClose(function listener)
+
+[Link](api/InterstitialAd_onClose.html)
 
 
 ### InterstitialAd.onError(function listener)
@@ -2263,6 +3008,11 @@ InnerAudioContext 实例，可通过 wx.createInnerAudioContext 接口获取实�
 | 1006 | 广告组件被驳回 |
 | 1007 | 广告组件被封禁 |
 | 1008 | 广告单元已关闭 |
+
+
+### InterstitialAd.onLoad(function listener)
+
+[Link](api/InterstitialAd_onLoad.html)
 
 
 ### Promise InterstitialAd.show()
@@ -2288,6 +3038,11 @@ InnerAudioContext 实例，可通过 wx.createInnerAudioContext 接口获取实�
 | update_time | Int64 | 是 | 该分数最后更新时间，Unix时间戳 |
 
 
+### LoadSubpackageTask
+
+[Link](api/LoadSubpackageTask.html)
+
+
 ### LoadSubpackageTask.onProgressUpdate(function listener)
 
 基础库 2.1.0 开始支持，低版本需做兼容处理。
@@ -2297,6 +3052,66 @@ InnerAudioContext 实例，可通过 wx.createInnerAudioContext 接口获取实�
 | progress | number | 分包下载进度百分比 |
 | totalBytesWritten | number | 已经下载的数据长度，单位 Bytes |
 | totalBytesExpectedToWrite | number | 预期需要下载的数据总长度，单位 Bytes |
+
+
+### LogManager
+
+[Link](api/LogManager.html)
+
+
+### LogManager.debug()
+
+[Link](api/LogManager_debug.html)
+
+
+### LogManager.info()
+
+[Link](api/LogManager_info.html)
+
+
+### LogManager.log()
+
+[Link](api/LogManager_log.html)
+
+
+### LogManager.warn()
+
+[Link](api/LogManager_warn.html)
+
+
+### MediaAudioPlayer
+
+[Link](api/MediaAudioPlayer.html)
+
+
+### Promise MediaAudioPlayer.addAudioSource(VideoDecoder source)
+
+[Link](api/MediaAudioPlayer_addAudioSource.html)
+
+
+### Promise MediaAudioPlayer.destroy()
+
+[Link](api/MediaAudioPlayer_destroy.html)
+
+
+### Promise MediaAudioPlayer.removeAudioSource(VideoDecoder source)
+
+[Link](api/MediaAudioPlayer_removeAudioSource.html)
+
+
+### Promise MediaAudioPlayer.start()
+
+[Link](api/MediaAudioPlayer_start.html)
+
+
+### Promise MediaAudioPlayer.stop()
+
+[Link](api/MediaAudioPlayer_stop.html)
+
+
+### MiniReportManager
+
+[Link](api/MiniReportManager.html)
 
 
 ### MiniReportManager.report(Object param)
@@ -2329,6 +3144,21 @@ InnerAudioContext 实例，可通过 wx.createInnerAudioContext 接口获取实�
 |  | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### OpenDataContext
+
+[Link](api/OpenDataContext.html)
+
+
+### OpenDataContextUserInfo
+
+[Link](api/OpenDataContextUserInfo.html)
+
+
+### OpenDataContext.postMessage(Object message)
+
+[Link](api/OpenDataContext_postMessage.html)
+
+
 ### OpenSettingButton
 
 用户点击后打开设置页面的按钮
@@ -2337,6 +3167,41 @@ InnerAudioContext 实例，可通过 wx.createInnerAudioContext 接口获取实�
 | --- | --- | --- |
 | text | 可以设置背景色和文本的按钮 |  |
 | image | 只能设置背景贴图的按钮，背景贴图会直接拉伸到按钮的宽高 |  |
+
+
+### OpenSettingButton.destroy()
+
+[Link](api/OpenSettingButton_destroy.html)
+
+
+### OpenSettingButton.hide()
+
+[Link](api/OpenSettingButton_hide.html)
+
+
+### OpenSettingButton.offTap(function listener)
+
+[Link](api/OpenSettingButton_offTap.html)
+
+
+### OpenSettingButton.onTap(function listener)
+
+[Link](api/OpenSettingButton_onTap.html)
+
+
+### OpenSettingButton.show()
+
+[Link](api/OpenSettingButton_show.html)
+
+
+### PageManager
+
+[Link](api/PageManager.html)
+
+
+### PageManager.destroy()
+
+[Link](api/PageManager_destroy.html)
 
 
 ### Promise PageManager.load(Object object)
@@ -2350,6 +3215,16 @@ InnerAudioContext 实例，可通过 wx.createInnerAudioContext 接口获取实�
 | extraData | Object |  | 否 | 选填，部分活动、功能允许额外提供参数数据，具体使用请根据渠道说明，默认可不填 |
 
 
+### PageManager.off(string eventName, function callback)
+
+[Link](api/PageManager_off.html)
+
+
+### PageManager.on(string eventName, function callback)
+
+[Link](api/PageManager_on.html)
+
+
 ### Promise PageManager.show(Object object)
 
 基础库 3.6.7 开始支持，低版本需做兼容处理。
@@ -2361,6 +3236,26 @@ InnerAudioContext 实例，可通过 wx.createInnerAudioContext 接口获取实�
 | extraData | Object |  | 否 | 选填，部分活动、功能允许额外提供参数数据，具体使用请根据渠道说明，默认可不填 |
 
 
+### Path2D
+
+[Link](api/Path2D.html)
+
+
+### Performance
+
+[Link](api/Performance.html)
+
+
+### number Performance.now()
+
+[Link](api/Performance_now.html)
+
+
+### PreDownloadSubpackageTask
+
+[Link](api/PreDownloadSubpackageTask.html)
+
+
 ### PreDownloadSubpackageTask.onProgressUpdate(function listener)
 
 基础库 2.27.3 开始支持，低版本需做兼容处理。
@@ -2370,6 +3265,11 @@ InnerAudioContext 实例，可通过 wx.createInnerAudioContext 接口获取实�
 | progress | number | 分包下载进度百分比 |
 | totalBytesWritten | number | 已经下载的数据长度，单位 Bytes |
 | totalBytesExpectedToWrite | number | 预期需要下载的数据总长度，单位 Bytes |
+
+
+### RankManager
+
+[Link](api/RankManager.html)
 
 
 ### RankManager.abort(Object params)
@@ -2458,6 +3358,41 @@ InnerAudioContext 实例，可通过 wx.createInnerAudioContext 接口获取实�
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### ReadResult
+
+[Link](api/ReadResult.html)
+
+
+### RealtimeLogManager
+
+[Link](api/RealtimeLogManager.html)
+
+
+### RealtimeLogManager.addFilterMsg(string msg)
+
+[Link](api/RealtimeLogManager_addFilterMsg.html)
+
+
+### RealtimeLogManager.error()
+
+[Link](api/RealtimeLogManager_error.html)
+
+
+### RealtimeLogManager.info()
+
+[Link](api/RealtimeLogManager_info.html)
+
+
+### RealtimeLogManager.setFilterMsg(string msg)
+
+[Link](api/RealtimeLogManager_setFilterMsg.html)
+
+
+### RealtimeLogManager.warn()
+
+[Link](api/RealtimeLogManager_warn.html)
+
+
 ### ReconnectSuccessRes
 
 GameServerManager.reconnect 接口 resolve 后的返回值
@@ -2468,6 +3403,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 |  | 结构属性 类型 说明 maxFrameId Array.<Frame> 此时服务器的最大帧号。 |  | 结构属性 | 类型 | 说明 |  | maxFrameId | Array.<Frame> | 此时服务器的最大帧号。 |
 |  | 结构属性 | 类型 | 说明 |
 |  | maxFrameId | Array.<Frame> | 此时服务器的最大帧号。 |
+
+
+### RecorderManager
+
+[Link](api/RecorderManager.html)
 
 
 ### RecorderManager.onError(function listener)
@@ -2489,6 +3429,31 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | isLastFrame | boolean | 当前帧是否正常录音结束前的最后一帧 |
 
 
+### RecorderManager.onInterruptionBegin(function listener)
+
+[Link](api/RecorderManager_onInterruptionBegin.html)
+
+
+### RecorderManager.onInterruptionEnd(function listener)
+
+[Link](api/RecorderManager_onInterruptionEnd.html)
+
+
+### RecorderManager.onPause(function listener)
+
+[Link](api/RecorderManager_onPause.html)
+
+
+### RecorderManager.onResume(function listener)
+
+[Link](api/RecorderManager_onResume.html)
+
+
+### RecorderManager.onStart(function listener)
+
+[Link](api/RecorderManager_onStart.html)
+
+
 ### RecorderManager.onStop(function listener)
 
 微信 Windows 版：支持
@@ -2498,6 +3463,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | tempFilePath | string | 录音文件的临时路径 (本地路径) |
 | duration | number | 录音总时长，单位：ms |
 | fileSize | number | 录音文件大小，单位：Byte |
+
+
+### RecorderManager.pause()
+
+[Link](api/RecorderManager_pause.html)
+
+
+### RecorderManager.resume()
+
+[Link](api/RecorderManager_resume.html)
 
 
 ### RecorderManager.start(Object object)
@@ -2545,6 +3520,41 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | voice_recognition | 同 mic，适用于语音识别，仅限 Android |
 
 
+### RecorderManager.stop()
+
+[Link](api/RecorderManager_stop.html)
+
+
+### RenderingContext
+
+[Link](api/RenderingContext.html)
+
+
+### number requestAnimationFrame(function callback)
+
+[Link](api/requestAnimationFrame.html)
+
+
+### RequestTask
+
+[Link](api/RequestTask.html)
+
+
+### RequestTask.abort()
+
+[Link](api/RequestTask_abort.html)
+
+
+### RequestTask.offChunkReceived(function listener)
+
+[Link](api/RequestTask_offChunkReceived.html)
+
+
+### RequestTask.offHeadersReceived(function listener)
+
+[Link](api/RequestTask_offHeadersReceived.html)
+
+
 ### RequestTask.onChunkReceived(function listener)
 
 基础库 2.20.1 开始支持，低版本需做兼容处理。
@@ -2563,6 +3573,36 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | header | Object | 开发者服务器返回的 HTTP Response Header |
 | statusCode | Number | 开发者服务器返回的 HTTP 状态码 （目前开发者工具上不会返回 statusCode 字段，可用真机查看该字段，后续将会支持） |
 | cookies | Array.<string> | 开发者服务器返回的 cookies，格式为字符串数组 |
+
+
+### RewardedVideoAd
+
+[Link](api/RewardedVideoAd.html)
+
+
+### RewardedVideoAd.destroy()
+
+[Link](api/RewardedVideoAd_destroy.html)
+
+
+### Promise RewardedVideoAd.load()
+
+[Link](api/RewardedVideoAd_load.html)
+
+
+### RewardedVideoAd.offClose(function listener)
+
+[Link](api/RewardedVideoAd_offClose.html)
+
+
+### RewardedVideoAd.offError(function listener)
+
+[Link](api/RewardedVideoAd_offError.html)
+
+
+### RewardedVideoAd.offLoad(function listener)
+
+[Link](api/RewardedVideoAd_offLoad.html)
 
 
 ### RewardedVideoAd.onClose(function listener)
@@ -2602,6 +3642,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 属性 | 类型 | 说明 | 最低版本 |
 | --- | --- | --- | --- |
 | useFallbackSharePage | boolean | 仅小游戏支持，本次展示使用激励广告分享页 | 3.7.7 |
+
+
+### Promise RewardedVideoAd.show()
+
+[Link](api/RewardedVideoAd_show.html)
+
+
+### SocketTask
+
+[Link](api/SocketTask.html)
 
 
 ### SocketTask.close(Object object)
@@ -2677,6 +3727,26 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### Stats
+
+[Link](api/Stats.html)
+
+
+### boolean Stats.isDirectory()
+
+[Link](api/Stats_isDirectory.html)
+
+
+### boolean Stats.isFile()
+
+[Link](api/Stats_isFile.html)
+
+
+### StoreGift
+
+[Link](api/StoreGift.html)
+
+
 ### Promise StoreGift.getOrderInfo()
 
 基础库 3.8.12 开始支持，低版本需做兼容处理。
@@ -2687,6 +3757,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | wishMessage | string | 当前订单对应的祝福语 |
 
 
+### boolean StoreGift.isSupported()
+
+[Link](api/StoreGift_isSupported.html)
+
+
 ### Promise StoreGift.open()
 
 基础库 3.8.12 开始支持，低版本需做兼容处理。
@@ -2695,6 +3770,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | --- | --- | --- |
 | errCode | number | 错误码 |
 | errMsg | string | 错误信息 |
+
+
+### SubscriptionsSetting
+
+[Link](api/SubscriptionsSetting.html)
 
 
 ### TCPSocket
@@ -2724,6 +3804,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | BSSID | string |  | 是 | 当前 wifi 网络的 BSSID ，可通过 wx.getConnectedWifi 获取 |
 
 
+### TCPSocket.close()
+
+[Link](api/TCPSocket_close.html)
+
+
 ### TCPSocket.connect(Object options)
 
 微信 Windows 版：支持
@@ -2735,6 +3820,41 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | timeout | number | 2 | 否 | 套接字要连接的超时时间，默认为 2s |  |
 | enableHttpDNS | boolean | false | 否 | 是否开启 HttpDNS 服务。如开启，需要同时填入 httpDNSServiceId 。 HttpDNS 用法详见 移动解析HttpDNS | 3.4.0 |
 | httpDNSServiceId | string |  | 否 | HttpDNS 服务商 Id。 HttpDNS 用法详见 移动解析HttpDNS | 3.4.0 |
+
+
+### TCPSocket.offBindWifi(function listener)
+
+[Link](api/TCPSocket_offBindWifi.html)
+
+
+### TCPSocket.offClose(function listener)
+
+[Link](api/TCPSocket_offClose.html)
+
+
+### TCPSocket.offConnect(function listener)
+
+[Link](api/TCPSocket_offConnect.html)
+
+
+### TCPSocket.offError(function listener)
+
+[Link](api/TCPSocket_offError.html)
+
+
+### TCPSocket.offMessage(function listener)
+
+[Link](api/TCPSocket_offMessage.html)
+
+
+### TCPSocket.onBindWifi(function listener)
+
+[Link](api/TCPSocket_onBindWifi.html)
+
+
+### TCPSocket.onClose(function listener)
+
+[Link](api/TCPSocket_onClose.html)
 
 
 ### TCPSocket.onConnect(function listener)
@@ -2796,6 +3916,26 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 |  | port | number | 端口号 |
 
 
+### TCPSocket.write(string|ArrayBuffer data)
+
+[Link](api/TCPSocket_write.html)
+
+
+### Tensor
+
+[Link](api/Tensor.html)
+
+
+### Tensors
+
+[Link](api/Tensors.html)
+
+
+### Touch
+
+[Link](api/Touch.html)
+
+
 ### UDPSocket
 
 基础库 2.7.0 开始支持，低版本需做兼容处理。
@@ -2809,6 +3949,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 2 |  | 发送失败，参数错误，port不合法 |
 
 
+### number UDPSocket.bind(number port)
+
+[Link](api/UDPSocket_bind.html)
+
+
+### UDPSocket.close()
+
+[Link](api/UDPSocket_close.html)
+
+
 ### UDPSocket.connect(Object object)
 
 基础库 2.15.0 开始支持，低版本需做兼容处理。
@@ -2819,6 +3969,31 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | port | number |  | 是 | 要发送消息的端口号 |
 
 
+### UDPSocket.offClose(function listener)
+
+[Link](api/UDPSocket_offClose.html)
+
+
+### UDPSocket.offError(function listener)
+
+[Link](api/UDPSocket_offError.html)
+
+
+### UDPSocket.offListening(function listener)
+
+[Link](api/UDPSocket_offListening.html)
+
+
+### UDPSocket.offMessage(function listener)
+
+[Link](api/UDPSocket_offMessage.html)
+
+
+### UDPSocket.onClose(function listener)
+
+[Link](api/UDPSocket_onClose.html)
+
+
 ### UDPSocket.onError(function listener)
 
 微信 Windows 版：支持
@@ -2826,6 +4001,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 属性 | 类型 | 说明 |
 | --- | --- | --- |
 | errMsg | string | 错误信息 |
+
+
+### UDPSocket.onListening(function listener)
+
+[Link](api/UDPSocket_onListening.html)
 
 
 ### UDPSocket.onMessage(function listener)
@@ -2864,6 +4044,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | setBroadcast | boolean | false | 否 | 向指定地址发消息时，是否要开启广播，基础库 2.24.0 开始支持 |
 
 
+### UDPSocket.setTTL(number ttl)
+
+[Link](api/UDPSocket_setTTL.html)
+
+
 ### UDPSocket.write(Object object)
 
 基础库 2.15.0 开始支持，低版本需做兼容处理。
@@ -2878,6 +4063,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | setBroadcast | boolean | false | 否 | 向指定地址发消息时，是否要开启广播，基础库 2.24.0 开始支持 |
 
 
+### UpdateManager
+
+[Link](api/UpdateManager.html)
+
+
+### UpdateManager.applyUpdate()
+
+[Link](api/UpdateManager_applyUpdate.html)
+
+
 ### UpdateManager.onCheckForUpdate(function listener)
 
 # 功能描述
@@ -2885,6 +4080,36 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 属性 | 类型 | 说明 |
 | --- | --- | --- |
 | hasUpdate | boolean | 是否有新版本 |
+
+
+### UpdateManager.onUpdateFailed(function listener)
+
+[Link](api/UpdateManager_onUpdateFailed.html)
+
+
+### UpdateManager.onUpdateReady(function listener)
+
+[Link](api/UpdateManager_onUpdateReady.html)
+
+
+### UploadTask
+
+[Link](api/UploadTask.html)
+
+
+### UploadTask.abort()
+
+[Link](api/UploadTask_abort.html)
+
+
+### UploadTask.offHeadersReceived(function listener)
+
+[Link](api/UploadTask_offHeadersReceived.html)
+
+
+### UploadTask.offProgressUpdate(function listener)
+
+[Link](api/UploadTask_offProgressUpdate.html)
 
 
 ### UploadTask.onHeadersReceived(function listener)
@@ -2905,6 +4130,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | progress | number | 上传进度百分比 |
 | totalBytesSent | number | 已经上传的数据长度，单位 Bytes |
 | totalBytesExpectedToSend | number | 预期需要上传的数据总长度，单位 Bytes |
+
+
+### UserCryptoManager
+
+[Link](api/UserCryptoManager.html)
 
 
 ### UserCryptoManager.getLatestUserKey(Object object)
@@ -2930,6 +4160,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### UserGameData
+
+[Link](api/UserGameData.html)
+
+
 ### UserInfo
 
 用户头像昵称获取规则已调整，参考 用户信息接口调整说明、小程序用户头像昵称获取规则调整公告
@@ -2951,6 +4186,21 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | image | 只能设置背景贴图的按钮，背景贴图会直接拉伸到按钮的宽高 |  |
 
 
+### UserInfoButton.destroy()
+
+[Link](api/UserInfoButton_destroy.html)
+
+
+### UserInfoButton.hide()
+
+[Link](api/UserInfoButton_hide.html)
+
+
+### UserInfoButton.offTap(function listener)
+
+[Link](api/UserInfoButton_offTap.html)
+
+
 ### UserInfoButton.onTap(function listener)
 
 微信 鸿蒙 OS 版：支持
@@ -2966,6 +4216,21 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | errMsg | string | 调用结果（错误原因） |  |
 
 
+### UserInfoButton.show()
+
+[Link](api/UserInfoButton_show.html)
+
+
+### Video
+
+[Link](api/Video.html)
+
+
+### VideoDecoder
+
+[Link](api/VideoDecoder.html)
+
+
 ### Object VideoDecoder.getFrameData()
 
 基础库 2.11.1 开始支持，低版本需做兼容处理。
@@ -2977,6 +4242,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | data | ArrayBuffer | 帧数据 |
 | pkPts | number | 帧原始 pts |
 | pkDts | number | 帧原始 dts |
+
+
+### VideoDecoder.off(string eventName, function callback)
+
+[Link](api/VideoDecoder_off.html)
 
 
 ### VideoDecoder.on(string eventName, function callback)
@@ -2992,6 +4262,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | ended | 解码结束事件。 |  |
 
 
+### Promise VideoDecoder.remove()
+
+[Link](api/VideoDecoder_remove.html)
+
+
+### Promise VideoDecoder.seek(number position)
+
+[Link](api/VideoDecoder_seek.html)
+
+
 ### Promise VideoDecoder.start(Object object)
 
 基础库 2.11.1 开始支持，低版本需做兼容处理。
@@ -3002,6 +4282,61 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | mode | number | 1 | 否 | 解码模式。0：按 pts 解码；1：以最快速度解码 |  |
 | abortAudio | boolean | false | 否 | 是否不需要音频轨道 | 2.15.0 |
 | abortVideo | boolean | false | 否 | 是否不需要视频轨道 | 2.15.0 |
+
+
+### Promise VideoDecoder.stop()
+
+[Link](api/VideoDecoder_stop.html)
+
+
+### Video.destroy()
+
+[Link](api/Video_destroy.html)
+
+
+### Promise Video.exitFullScreen()
+
+[Link](api/Video_exitFullScreen.html)
+
+
+### Video.offEnded(function listener)
+
+[Link](api/Video_offEnded.html)
+
+
+### Video.offError(function listener)
+
+[Link](api/Video_offError.html)
+
+
+### Video.offPause(function listener)
+
+[Link](api/Video_offPause.html)
+
+
+### Video.offPlay(function listener)
+
+[Link](api/Video_offPlay.html)
+
+
+### Video.offProgress(function listener)
+
+[Link](api/Video_offProgress.html)
+
+
+### Video.offTimeUpdate(function listener)
+
+[Link](api/Video_offTimeUpdate.html)
+
+
+### Video.offWaiting(function listener)
+
+[Link](api/Video_offWaiting.html)
+
+
+### Video.onEnded(function listener)
+
+[Link](api/Video_onEnded.html)
 
 
 ### Video.onError(function listener)
@@ -3016,6 +4351,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | MEDIA_ERR_NETWORK | 当下载时发生错误 |
 | MEDIA_ERR_DECODE | 当解码时发生错误 |
 | MEDIA_ERR_SRC_NOT_SUPPORTED | video 的 src 属性是不支持的资源类型 |
+
+
+### Video.onPause(function listener)
+
+[Link](api/Video_onPause.html)
+
+
+### Video.onPlay(function listener)
+
+[Link](api/Video_onPlay.html)
 
 
 ### Video.onProgress(function listener)
@@ -3038,6 +4383,21 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | duration | number | 视频的总时长，单位为秒 |
 
 
+### Video.onWaiting(function listener)
+
+[Link](api/Video_onWaiting.html)
+
+
+### Promise Video.pause()
+
+[Link](api/Video_pause.html)
+
+
+### Promise Video.play()
+
+[Link](api/Video_play.html)
+
+
 ### Promise Video.requestFullScreen(number direction)
 
 微信 鸿蒙 OS 版：支持
@@ -3049,6 +4409,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | -90 | 屏幕顺时针90度 |  |
 
 
+### Promise Video.seek(number time)
+
+[Link](api/Video_seek.html)
+
+
+### Promise Video.stop()
+
+[Link](api/Video_stop.html)
+
+
 ### VKBodyAnchor
 
 基础库 2.32.1 开始支持，低版本需做兼容处理。
@@ -3056,6 +4426,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 值 | 说明 | 最低版本 |
 | --- | --- | --- |
 | 5 | 人体 |  |
+
+
+### VKCamera
+
+[Link](api/VKCamera.html)
+
+
+### Float32Array VKCamera.getProjectionMatrix(number near, number far)
+
+[Link](api/VKCamera_getProjectionMatrix.html)
 
 
 ### VKDepthAnchor
@@ -3074,6 +4454,21 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 值 | 说明 | 最低版本 |
 | --- | --- | --- |
 | 3 | 人脸 |  |
+
+
+### VKFrame
+
+[Link](api/VKFrame.html)
+
+
+### ArrayBuffer VKFrame.getCameraBuffer(number width, number height)
+
+[Link](api/VKFrame_getCameraBuffer.html)
+
+
+### ArrayBuffer VKFrame.getCameraJpgBuffer(number width, number height, number quality)
+
+[Link](api/VKFrame_getCameraJpgBuffer.html)
 
 
 ### Object VKFrame.getCameraTexture(WebGLRenderingContext gl)
@@ -3095,6 +4490,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | width | number | 深度纹理宽 |
 | height | number | 深度纹理高 |
 | DepthAddress | ArrayBuffer | 深度纹理buffer |
+
+
+### Float32Array VKFrame.getDisplayTransform()
+
+[Link](api/VKFrame_getDisplayTransform.html)
 
 
 ### Object VKFrame.getLegSegmentBuffer()
@@ -3163,6 +4563,26 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 1 | 运行中 |  |
 | 2 | 暂停中 |  |
 | 3 | 初始化中 | 2.29.0 |
+
+
+### number VKSession.addMarker(string path)
+
+[Link](api/VKSession_addMarker.html)
+
+
+### number VKSession.addOSDMarker(string path)
+
+[Link](api/VKSession_addOSDMarker.html)
+
+
+### VKSession.cancelAnimationFrame(number requestID)
+
+[Link](api/VKSession_cancelAnimationFrame.html)
+
+
+### VKSession.destroy()
+
+[Link](api/VKSession_destroy.html)
 
 
 ### VKSession.detectBody(Object object)
@@ -3255,6 +4675,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | path | string | 图片路径 |
 
 
+### VKFrame VKSession.getVKFrame(number width, number height)
+
+[Link](api/VKSession_getVKFrame.html)
+
+
 ### Array.<Object> VKSession.hitTest(number x, number y, Object reset)
 
 基础库 2.32.1 开始支持，低版本需做兼容处理。
@@ -3262,6 +4687,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 属性 | 类型 | 说明 |
 | --- | --- | --- |
 | transform | Float32Array | 包含位置、旋转、放缩信息的矩阵，以列为主序 |
+
+
+### VKSession.off(string eventName, function fn)
+
+[Link](api/VKSession_off.html)
 
 
 ### VKSession.on(string eventName, function fn)
@@ -3276,6 +4706,21 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | removeAnchors | 删除 anchor 事件，回调参数为 VKPlaneAnchor/VKMarkerAnchor/VKOSDAnchor 列表（只有v2版本支持） 或 VKFaceAnchor/VKOCRAnchor/VKHandAnchor/VKBodyAnchor 列表（v1、v2都支持） | 2.22.0 |
 
 
+### VKSession.removeMarker(number markerId)
+
+[Link](api/VKSession_removeMarker.html)
+
+
+### VKSession.removeOSDMarker(number markerId)
+
+[Link](api/VKSession_removeOSDMarker.html)
+
+
+### number VKSession.requestAnimationFrame(function callback)
+
+[Link](api/VKSession_requestAnimationFrame.html)
+
+
 ### VKSession.runOCR(Object object)
 
 基础库 2.32.1 开始支持，低版本需做兼容处理。
@@ -3285,6 +4730,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | frameBuffer | ArrayBuffer |  | 是 | 待识别图像的像素点数据，每四项表示一个像素点的 RGBA |
 | width | number |  | 是 | 图像宽度 |
 | height | number |  | 是 | 图像高度 |
+
+
+### VKSession.setDepthOccRange(number threshold)
+
+[Link](api/VKSession_setDepthOccRange.html)
 
 
 ### VKSession.start(function callback)
@@ -3308,6 +4758,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 2003002 | 未开启小程序相机权限 |  |
 
 
+### VKSession.stop()
+
+[Link](api/VKSession_stop.html)
+
+
 ### VKSession.update3DMode(Object object)
 
 基础库 2.32.1 开始支持，低版本需做兼容处理。
@@ -3326,6 +4781,91 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | useMask | boolean |  | 是 | 设置是否开启试鞋，返回腿部遮挡纹理 |
 
 
+### VKSession.updateOSDThreshold(number threshold)
+
+[Link](api/VKSession_updateOSDThreshold.html)
+
+
+### WebAudioContext
+
+[Link](api/WebAudioContext.html)
+
+
+### WebAudioContextNode
+
+[Link](api/WebAudioContextNode.html)
+
+
+### Promise WebAudioContext.close()
+
+[Link](api/WebAudioContext_close.html)
+
+
+### AnalyserNode WebAudioContext.createAnalyser()
+
+[Link](api/WebAudioContext_createAnalyser.html)
+
+
+### BiquadFilterNode WebAudioContext.createBiquadFilter()
+
+[Link](api/WebAudioContext_createBiquadFilter.html)
+
+
+### AudioBuffer WebAudioContext.createBuffer(number numOfChannels, number length, number sampleRate)
+
+[Link](api/WebAudioContext_createBuffer.html)
+
+
+### BufferSourceNode WebAudioContext.createBufferSource()
+
+[Link](api/WebAudioContext_createBufferSource.html)
+
+
+### ChannelMergerNode WebAudioContext.createChannelMerger(number numberOfInputs)
+
+[Link](api/WebAudioContext_createChannelMerger.html)
+
+
+### ChannelSplitterNode WebAudioContext.createChannelSplitter(number numberOfOutputs)
+
+[Link](api/WebAudioContext_createChannelSplitter.html)
+
+
+### ConstantSourceNode WebAudioContext.createConstantSource()
+
+[Link](api/WebAudioContext_createConstantSource.html)
+
+
+### DelayNode WebAudioContext.createDelay(number maxDelayTime)
+
+[Link](api/WebAudioContext_createDelay.html)
+
+
+### DynamicsCompressorNode WebAudioContext.createDynamicsCompressor()
+
+[Link](api/WebAudioContext_createDynamicsCompressor.html)
+
+
+### GainNode WebAudioContext.createGain()
+
+[Link](api/WebAudioContext_createGain.html)
+
+
+### IIRFilterNode WebAudioContext.createIIRFilter(Array.<number> feedforward, Array.<number> feedback)
+
+[Link](api/WebAudioContext_createIIRFilter.html)
+
+
+### OscillatorNode WebAudioContext.createOscillator()
+
+[Link](api/WebAudioContext_createOscillator.html)
+
+
+### PannerNode WebAudioContext.createPanner()
+
+[Link](api/WebAudioContext_createPanner.html)
+
+
 ### PeriodicWaveNode WebAudioContext.createPeriodicWave(Float32Array real, Float32Array imag, object constraints)
 
 # 功能描述
@@ -3335,6 +4875,36 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | disableNormalization | boolean |  | 否 | 如果指定为true则禁用标准化，默认为false |
 
 
+### ScriptProcessorNode WebAudioContext.createScriptProcessor(number bufferSize, number numberOfInputChannels, number numberOfOutputChannels)
+
+[Link](api/WebAudioContext_createScriptProcessor.html)
+
+
+### WaveShaperNode WebAudioContext.createWaveShaper()
+
+[Link](api/WebAudioContext_createWaveShaper.html)
+
+
+### AudioBuffer WebAudioContext.decodeAudioData(ArrayBuffer audioData, function successCallback, function errorCallback)
+
+[Link](api/WebAudioContext_decodeAudioData.html)
+
+
+### Promise WebAudioContext.resume()
+
+[Link](api/WebAudioContext_resume.html)
+
+
+### Promise WebAudioContext.suspend()
+
+[Link](api/WebAudioContext_suspend.html)
+
+
+### WebGLRenderingContext.wxBindCanvasTexture(number texture, Canvas canvas)
+
+[Link](api/WebGLRenderingContext_wxBindCanvasTexture.html)
+
+
 ### Worker
 
 相关文档: 多线程 Worker
@@ -3342,6 +4912,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 属性 | 类型 | 说明 |
 | --- | --- | --- |
 | USER_DATA_PATH | string | 文件系统中的用户目录路径 (本地路径) |
+
+
+### ArrayBuffer Worker.getCameraFrameData()
+
+[Link](api/Worker_getCameraFrameData.html)
 
 
 ### Worker.onError(function listener)
@@ -3360,6 +4935,31 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 属性 | 类型 | 说明 |
 | --- | --- | --- |
 | message | Object | 主线程/Worker 线程向当前线程发送的消息 |
+
+
+### Worker.onProcessKilled(function listener)
+
+[Link](api/Worker_onProcessKilled.html)
+
+
+### Worker.postMessage(Object message)
+
+[Link](api/Worker_postMessage.html)
+
+
+### Worker.terminate()
+
+[Link](api/Worker_terminate.html)
+
+
+### Worker.testOnProcessKilled()
+
+[Link](api/Worker_testOnProcessKilled.html)
+
+
+### WriteResult
+
+[Link](api/WriteResult.html)
 
 
 ### wx.addCard(Object object)
@@ -3518,6 +5118,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### wx.clearStorageSync()
+
+[Link](api/wx_clearStorageSync.html)
+
+
 ### wx.closeBLEConnection(Object object)
 
 基础库 2.9.2 开始支持，低版本需做兼容处理。
@@ -3628,6 +5233,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### string wx.createBufferURL(ArrayBuffer|TypedArray buffer)
+
+[Link](api/wx_createBufferURL.html)
+
+
 ### Camera wx.createCamera(Object object)
 
 基础库 2.9.0 开始支持，低版本需做兼容处理。
@@ -3644,6 +5254,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | success | function |  | 否 | 接口调用成功的回调函数 |
 | fail | function |  | 否 | 接口调用失败的回调函数 |
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+
+
+### Canvas wx.createCanvas()
+
+[Link](api/wx_createCanvas.html)
 
 
 ### CustomAd wx.createCustomAd(Object object)
@@ -3793,6 +5408,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 |  | gridCount | number |  | 是 | grid(格子) 广告组件的格子个数，可设置爱5，8两种格子个数样式，默认值为5 |
 
 
+### Image wx.createImage()
+
+[Link](api/wx_createImage.html)
+
+
+### ImageData wx.createImageData(number width, number height, Uint8ClampedArray data)
+
+[Link](api/wx_createImageData.html)
+
+
 ### InferenceSession wx.createInferenceSession(Object object)
 
 基础库 2.30.0 开始支持，低版本需做兼容处理。
@@ -3829,6 +5454,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 属性 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | --- | --- | --- |
 | adUnitId | string |  | 是 | 广告单元 id |
+
+
+### MediaAudioPlayer wx.createMediaAudioPlayer()
+
+[Link](api/wx_createMediaAudioPlayer.html)
 
 
 ### OpenSettingButton wx.createOpenSettingButton(Object object)
@@ -3883,6 +5513,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | -8 | 小游戏版本错误 | 小游戏版本与openlink不匹配，需正确使用openlink对应生效的 开发版、体验版、正式版。 |
 
 
+### Path2D wx.createPath2D()
+
+[Link](api/wx_createPath2D.html)
+
+
 ### RewardedVideoAd wx.createRewardedVideoAd(Object object)
 
 基础库 2.0.4 开始支持，低版本需做兼容处理。
@@ -3915,6 +5550,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 合法值 | 说明 |
 | ipv4 | IPv4 |
 | ipv6 | IPv6 |
+
+
+### UDPSocket wx.createUDPSocket(string type)
+
+[Link](api/wx_createUDPSocket.html)
 
 
 ### UserInfoButton wx.createUserInfoButton(Object object)
@@ -3994,6 +5634,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 |  | underGameView | boolean | false | 否 | 视频是否显示在游戏画布之下（配合 Canvas.getContext('webgl', {alpha: true}) 使主屏canvas实现透明效果） | 2.11.0 |
 |  | autoPauseIfNavigate | boolean | true | 否 | 视频跳转后自动暂停播放 |  |
 |  | autoPauseIfOpenNative | boolean | true | 否 | 视频跳转原生页后自动暂停播放 |  |
+
+
+### VideoDecoder wx.createVideoDecoder()
+
+[Link](api/wx_createVideoDecoder.html)
 
 
 ### VKSession wx.createVKSession(Object object)
@@ -4080,6 +5725,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 |  | gl | WebGLRenderingContext |  | 否 | 绑定的 WebGLRenderingContext 对象 | 2.23.0 |
 
 
+### WebAudioContext wx.createWebAudioContext()
+
+[Link](api/wx_createWebAudioContext.html)
+
+
 ### Worker wx.createWorker(string scriptPath, object options)
 
 基础库 1.9.90 开始支持，低版本需做兼容处理。
@@ -4147,6 +5797,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | gbk |  |
 
 
+### wx.env
+
+[Link](api/wx_env.html)
+
+
 ### wx.exitChatTool(Object object)
 
 基础库 3.7.12 开始支持，低版本需做兼容处理。
@@ -4167,6 +5822,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | success | function |  | 否 | 接口调用成功的回调函数 |
 | fail | function |  | 否 | 接口调用失败的回调函数 |
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+
+
+### wx.exitPointerLock()
+
+[Link](api/wx_exitPointerLock.html)
 
 
 ### wx.exitVoIPChat(Object object)
@@ -4545,6 +6205,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | embedded | 内嵌，通过打开半屏小程序能力打开的小程序 |
 
 
+### Object wx.getExptInfoSync(Array.<string> keys)
+
+[Link](api/wx_getExptInfoSync.html)
+
+
 ### wx.getExtConfig(Object object)
 
 基础库 2.8.3 开始支持，低版本需做兼容处理。
@@ -4554,6 +6219,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | success | function |  | 否 | 接口调用成功的回调函数 |
 | fail | function |  | 否 | 接口调用失败的回调函数 |
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+
+
+### Object wx.getExtConfigSync()
+
+[Link](api/wx_getExtConfigSync.html)
+
+
+### FileSystemManager wx.getFileSystemManager()
+
+[Link](api/wx_getFileSystemManager.html)
 
 
 ### wx.getFriendCloudStorage(Object object)
@@ -4649,6 +6324,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | connected | boolean | 控制器是否仍然连接着系统. |
 | axes | Array.<object> | 一个表示控制器设备上存在的坐标轴的数组 (比如控制器摇杆)。 |
 | buttons | Array.<object> | 设备上的按键的数组。 |
+
+
+### GameRecorder wx.getGameRecorder()
+
+[Link](api/wx_getGameRecorder.html)
 
 
 ### GameServerManager wx.getGameServerManager()
@@ -4923,6 +6603,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | screenCanvas | sharedCanvas 独立渲染，并且本身已经上屏 |
 
 
+### Performance wx.getPerformance()
+
+[Link](api/wx_getPerformance.html)
+
+
 ### wx.getPhoneNumber(Object object)
 
 以 Promise 风格 调用：不支持
@@ -4958,6 +6643,21 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### RankManager wx.getRankManager()
+
+[Link](api/wx_getRankManager.html)
+
+
+### RealtimeLogManager wx.getRealtimeLogManager()
+
+[Link](api/wx_getRealtimeLogManager.html)
+
+
+### RecorderManager wx.getRecorderManager()
+
+[Link](api/wx_getRecorderManager.html)
+
+
 ### wx.getScreenBrightness(Object object)
 
 基础库 1.2.0 开始支持，低版本需做兼容处理。
@@ -4990,6 +6690,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | success | function |  | 否 | 接口调用成功的回调函数 |  |
 | fail | function |  | 否 | 接口调用失败的回调函数 |  |
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |  |
+
+
+### Canvas wx.getSharedCanvas()
+
+[Link](api/wx_getSharedCanvas.html)
 
 
 ### wx.getShareInfo(Object object)
@@ -5049,6 +6754,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | keys | Array.<string> | 当前 storage 中所有的 key |
 | currentSize | number | 当前占用的空间大小, 单位 KB |
 | limitSize | number | 限制的空间大小，单位 KB |
+
+
+### any wx.getStorageSync(string key)
+
+[Link](api/wx_getStorageSync.html)
 
 
 ### wx.getSystemInfo(Object object)
@@ -5182,6 +6892,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 |  | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### UpdateManager wx.getUpdateManager()
+
+[Link](api/wx_getUpdateManager.html)
+
+
 ### wx.getUserCloudStorage(Object object)
 
 基础库 1.9.92 开始支持，低版本需做兼容处理。
@@ -5203,6 +6918,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | success | function |  | 否 | 接口调用成功的回调函数 |
 | fail | function |  | 否 | 接口调用失败的回调函数 |
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+
+
+### UserCryptoManager wx.getUserCryptoManager()
+
+[Link](api/wx_getUserCryptoManager.html)
 
 
 ### wx.getUserInfo(Object object)
@@ -5340,6 +7060,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### wx.isChatTool()
+
+[Link](api/wx_isChatTool.html)
+
+
+### boolean wx.isPointerLocked()
+
+[Link](api/wx_isPointerLocked.html)
+
+
 ### boolean wx.isVKSupport(string version)
 
 基础库 2.22.0 开始支持，低版本需做兼容处理。
@@ -5374,6 +7104,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 |  | success | function |  | 否 | 接口调用成功的回调函数 |  |
 |  | fail | function |  | 否 | 接口调用失败的回调函数 |  |
 |  | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |  |
+
+
+### string wx.loadFont(string path)
+
+[Link](api/wx_loadFont.html)
 
 
 ### LoadSubpackageTask wx.loadSubpackage(Object object)
@@ -5505,6 +7240,271 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 |  | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### wx.offAccelerometerChange(function listener)
+
+[Link](api/wx_offAccelerometerChange.html)
+
+
+### wx.offAddToFavorites()
+
+[Link](api/wx_offAddToFavorites.html)
+
+
+### wx.offAudioInterruptionBegin(function listener)
+
+[Link](api/wx_offAudioInterruptionBegin.html)
+
+
+### wx.offAudioInterruptionEnd(function listener)
+
+[Link](api/wx_offAudioInterruptionEnd.html)
+
+
+### wx.offBeaconServiceChange()
+
+[Link](api/wx_offBeaconServiceChange.html)
+
+
+### wx.offBeaconUpdate()
+
+[Link](api/wx_offBeaconUpdate.html)
+
+
+### wx.offBLECharacteristicValueChange()
+
+[Link](api/wx_offBLECharacteristicValueChange.html)
+
+
+### wx.offBLEConnectionStateChange(function listener)
+
+[Link](api/wx_offBLEConnectionStateChange.html)
+
+
+### wx.offBLEMTUChange(function listener)
+
+[Link](api/wx_offBLEMTUChange.html)
+
+
+### wx.offBLEPeripheralConnectionStateChanged(function listener)
+
+[Link](api/wx_offBLEPeripheralConnectionStateChanged.html)
+
+
+### wx.offBluetoothAdapterStateChange()
+
+[Link](api/wx_offBluetoothAdapterStateChange.html)
+
+
+### wx.offBluetoothDeviceFound()
+
+[Link](api/wx_offBluetoothDeviceFound.html)
+
+
+### wx.offCompassChange(function listener)
+
+[Link](api/wx_offCompassChange.html)
+
+
+### wx.offCopyUrl()
+
+[Link](api/wx_offCopyUrl.html)
+
+
+### wx.offDeviceMotionChange(function listener)
+
+[Link](api/wx_offDeviceMotionChange.html)
+
+
+### wx.offDeviceOrientationChange(function listener)
+
+[Link](api/wx_offDeviceOrientationChange.html)
+
+
+### wx.offDirectAdStatusChange(function listener)
+
+[Link](api/wx_offDirectAdStatusChange.html)
+
+
+### wx.offError(function listener)
+
+[Link](api/wx_offError.html)
+
+
+### wx.offGyroscopeChange(function listener)
+
+[Link](api/wx_offGyroscopeChange.html)
+
+
+### wx.offHandoff()
+
+[Link](api/wx_offHandoff.html)
+
+
+### wx.offHide(function listener)
+
+[Link](api/wx_offHide.html)
+
+
+### wx.offInteractiveStorageModified(function callback)
+
+[Link](api/wx_offInteractiveStorageModified.html)
+
+
+### wx.offKeyboardComplete(function listener)
+
+[Link](api/wx_offKeyboardComplete.html)
+
+
+### wx.offKeyboardConfirm(function listener)
+
+[Link](api/wx_offKeyboardConfirm.html)
+
+
+### wx.offKeyboardHeightChange(function listener)
+
+[Link](api/wx_offKeyboardHeightChange.html)
+
+
+### wx.offKeyboardInput(function listener)
+
+[Link](api/wx_offKeyboardInput.html)
+
+
+### wx.offKeyDown(function listener)
+
+[Link](api/wx_offKeyDown.html)
+
+
+### wx.offKeyUp(function listener)
+
+[Link](api/wx_offKeyUp.html)
+
+
+### wx.offMemoryWarning(function listener)
+
+[Link](api/wx_offMemoryWarning.html)
+
+
+### wx.offMouseDown(function listener)
+
+[Link](api/wx_offMouseDown.html)
+
+
+### wx.offMouseMove(function listener)
+
+[Link](api/wx_offMouseMove.html)
+
+
+### wx.offMouseUp(function listener)
+
+[Link](api/wx_offMouseUp.html)
+
+
+### wx.offNetworkStatusChange(function listener)
+
+[Link](api/wx_offNetworkStatusChange.html)
+
+
+### wx.offNetworkWeakChange(function listener)
+
+[Link](api/wx_offNetworkWeakChange.html)
+
+
+### wx.offOfficialComponentsInfoChange(function listener)
+
+[Link](api/wx_offOfficialComponentsInfoChange.html)
+
+
+### wx.offScreenRecordingStateChanged(function listener)
+
+[Link](api/wx_offScreenRecordingStateChanged.html)
+
+
+### wx.offShareAppMessage(function listener)
+
+[Link](api/wx_offShareAppMessage.html)
+
+
+### wx.offShareMessageToFriend(function listener)
+
+[Link](api/wx_offShareMessageToFriend.html)
+
+
+### wx.offShareTimeline(function listener)
+
+[Link](api/wx_offShareTimeline.html)
+
+
+### wx.offShow(function listener)
+
+[Link](api/wx_offShow.html)
+
+
+### wx.offTouchCancel(function listener)
+
+[Link](api/wx_offTouchCancel.html)
+
+
+### wx.offTouchEnd(function listener)
+
+[Link](api/wx_offTouchEnd.html)
+
+
+### wx.offTouchMove(function listener)
+
+[Link](api/wx_offTouchMove.html)
+
+
+### wx.offTouchStart(function listener)
+
+[Link](api/wx_offTouchStart.html)
+
+
+### wx.offUnhandledRejection(function listener)
+
+[Link](api/wx_offUnhandledRejection.html)
+
+
+### wx.offUserCaptureScreen()
+
+[Link](api/wx_offUserCaptureScreen.html)
+
+
+### wx.offVoIPChatInterrupted(function listener)
+
+[Link](api/wx_offVoIPChatInterrupted.html)
+
+
+### wx.offVoIPChatMembersChanged(function listener)
+
+[Link](api/wx_offVoIPChatMembersChanged.html)
+
+
+### wx.offVoIPChatSpeakersChanged(function listener)
+
+[Link](api/wx_offVoIPChatSpeakersChanged.html)
+
+
+### wx.offVoIPChatStateChanged(function listener)
+
+[Link](api/wx_offVoIPChatStateChanged.html)
+
+
+### wx.offWheel(function listener)
+
+[Link](api/wx_offWheel.html)
+
+
+### wx.offWindowResize(function listener)
+
+[Link](api/wx_offWindowResize.html)
+
+
+### wx.offWindowStateChange(function listener)
+
+[Link](api/wx_offWindowStateChange.html)
+
+
 ### wx.onAccelerometerChange(function listener)
 
 微信 鸿蒙 OS 版：支持
@@ -5526,6 +7526,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | query | string | 查询字符串，必须是 key1=val1&key2=val2 的格式。从收藏进入后，可通过 wx.getLaunchOptionsSync() 或 wx.onShow() 获取启动参数中的 query。 |
 | imageUrl | string | 转发显示图片的链接，可以是网络图片路径或本地图片文件路径或相对代码包根目录的图片文件路径。显示图片长宽比是 5:4 |
 | disableForward | boolean | 禁止收藏后长按转发，默认 false |
+
+
+### wx.onAudioInterruptionBegin(function listener)
+
+[Link](api/wx_onAudioInterruptionBegin.html)
+
+
+### wx.onAudioInterruptionEnd(function listener)
+
+[Link](api/wx_onAudioInterruptionEnd.html)
 
 
 ### wx.onBackgroundFetchData(function listener)
@@ -5734,6 +7744,16 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | query | string | 需要传递给接力客户端的 query |
 
 
+### wx.onHide(function listener)
+
+[Link](api/wx_onHide.html)
+
+
+### wx.onInteractiveStorageModified(function callback)
+
+[Link](api/wx_onInteractiveStorageModified.html)
+
+
 ### wx.onKeyboardComplete(function listener)
 
 微信 鸿蒙 OS 版：支持
@@ -5804,6 +7824,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | 5 | TRIM_MEMORY_RUNNING_MODERATE |
 | 10 | TRIM_MEMORY_RUNNING_LOW |
 | 15 | TRIM_MEMORY_RUNNING_CRITICAL |
+
+
+### wx.onMessage(function callback)
+
+[Link](api/wx_onMessage.html)
 
 
 ### wx.onMouseDown(function listener)
@@ -6484,6 +8509,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### wx.removeStorageSync(string key)
+
+[Link](api/wx_removeStorageSync.html)
+
+
 ### wx.removeUserCloudStorage(Object object)
 
 基础库 1.9.92 开始支持，低版本需做兼容处理。
@@ -6494,6 +8524,21 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | success | function |  | 否 | 接口调用成功的回调函数 |
 | fail | function |  | 否 | 接口调用失败的回调函数 |
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+
+
+### wx.reportEvent(string eventId, object data)
+
+[Link](api/wx_reportEvent.html)
+
+
+### wx.reportMonitor(string name, number value)
+
+[Link](api/wx_reportMonitor.html)
+
+
+### wx.reportPerformance(Number id, Number value, String|Array dimensions)
+
+[Link](api/wx_reportPerformance.html)
 
 
 ### wx.reportScene(Object object)
@@ -6684,6 +8729,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 |  | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### wx.requestPointerLock()
+
+[Link](api/wx_requestPointerLock.html)
+
+
 ### wx.requestSubscribeMessage(Object object)
 
 基础库 2.4.4 开始支持，低版本需做兼容处理。
@@ -6741,6 +8791,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | success | function |  | 否 | 接口调用成功的回调函数 |
 | fail | function |  | 否 | 接口调用失败的回调函数 |
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+
+
+### wx.revokeBufferURL(string url)
+
+[Link](api/wx_revokeBufferURL.html)
 
 
 ### wx.saveFileToDisk(Object object)
@@ -6861,6 +8916,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 
+### boolean wx.setCursor(string path, number x, number y)
+
+[Link](api/wx_setCursor.html)
+
+
 ### wx.setDeviceOrientation(Object object)
 
 基础库 2.26.0 开始支持，低版本需做兼容处理。
@@ -6887,6 +8947,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | success | function |  | 否 | 接口调用成功的回调函数 |
 | fail | function |  | 否 | 接口调用失败的回调函数 |
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+
+
+### Boolean wx.setHandoffQuery(String query)
+
+[Link](api/wx_setHandoffQuery.html)
 
 
 ### wx.setInnerAudioOption(Object object)
@@ -6941,6 +9006,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | query | string |  | 是 | 需要传递的字符串数据，长度需要在 128 之内 |
 
 
+### wx.setPreferredFramesPerSecond(number fps)
+
+[Link](api/wx_setPreferredFramesPerSecond.html)
+
+
 ### wx.setScreenBrightness(Object object)
 
 基础库 1.2.0 开始支持，低版本需做兼容处理。
@@ -6981,6 +9051,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | success | function |  | 否 | 接口调用成功的回调函数 |  |
 | fail | function |  | 否 | 接口调用失败的回调函数 |  |
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |  |
+
+
+### wx.setStorageSync(string key, any data)
+
+[Link](api/wx_setStorageSync.html)
 
 
 ### wx.setUserCloudStorage(Object object)
@@ -7425,6 +9500,11 @@ GameServerManager.reconnect 接口 resolve 后的返回值
 | success | function |  | 否 | 接口调用成功的回调函数 |
 | fail | function |  | 否 | 接口调用失败的回调函数 |
 | complete | function |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+
+
+### wx.triggerGC()
+
+[Link](api/wx_triggerGC.html)
 
 
 ### wx.updateKeyboard(Object object)
