@@ -56,6 +56,7 @@
     <Compile Include="Performance.cs" />
     <Compile Include="ScreenInfo.cs" />
     <Compile Include="Sprite.cs" />
+    <Compile Include="SubPackage.cs" />
     <Compile Include="SystemInfo.cs" />
     <Compile Include="Update.cs" />
     <Compile Include="UpdateManager.cs" />
