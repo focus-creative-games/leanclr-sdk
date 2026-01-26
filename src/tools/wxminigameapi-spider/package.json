@@ -1,0 +1,27 @@
+{
+  "name": "wxminigameapi-spider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/focus-creative-games/leanclr-sdk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/focus-creative-games/leanclr-sdk/issues"
+  },
+  "homepage": "https://github.com/focus-creative-games/leanclr-sdk#readme",
+  "dependencies": {
+    "axios": "^1.13.3",
+    "cheerio": "^1.2.0",
+    "fs": "^0.0.1-security",
+    "puppeteer": "^24.36.0"
+  }
+}
