@@ -3,6 +3,145 @@ using System.Runtime.InteropServices;
 
 namespace WxSdk
 {
+    public class SystemBluetoothSetting
+    {
+
+    }
+
+
+    public class OpenSystemBluetoothSettingOptions
+    {
+        public Action<SystemBluetoothSetting> onSuccess;
+
+        public Action onFail;
+
+        public Action onComplete;
+    }
+
+    public enum AppAuthStatus
+    {
+        Authorized,
+        Denied,
+        NotDetermined
+    }
+
+    public class AppAuthorizeSetting
+    {
+        public AppAuthStatus AlbumAuthorized { get; set; }
+
+        public AppAuthStatus BluetoothAuthorized { get; set; }
+
+        public AppAuthStatus CameraAuthorized { get; set; }
+        public AppAuthStatus LocationAuthorized { get; set; }
+
+        public bool LocationReduceAccuracy { get; set; }
+
+        public AppAuthStatus MicrophoneAuthorized { get; set; }
+
+        public AppAuthStatus NotificationAuthorized { get; set; }
+
+        public AppAuthStatus NotificationAlertAuthorized { get; set; }
+
+        public AppAuthStatus NotificationBadgeAuthorized { get; set; }
+
+        public AppAuthStatus NotificationSoundAuthorized { get; set; }
+
+        public AppAuthStatus PhoneCalendarAuthorized { get; set; }
+    }
+
+
+    public class AppAuthorizeSettingOptions
+    {
+        public Action onSuccess;
+
+        public Action onFail;
+
+        public Action onComplete;
+    }
+
+    public class SafeArea
+    {
+        public int Left { get; set; }
+
+        public int Right { get; set; }
+
+        public int Top { get; set; }
+
+        public int Bottom { get; set; }
+
+        public int Width => Right - Left;
+
+        public int Height => Bottom - Top;
+    }
+
+    public class WindowsInfo
+    {
+        public float PixelRatio { get; set; }
+
+        public int ScreenWidth { get; set; }
+
+        public int ScreenHeight { get; set; }
+
+        public int WindowsWidth { get; set; }
+
+        public int WindowsHeight { get; set; }
+
+        public int StatusBarHeight { get; set; }
+
+        public SafeArea SafeArea { get; set; }
+    }
+
+    public class SystemSetting
+    {
+        public bool BluetoothEnabled { get; set; }
+
+        public bool LocationEnabled { get; set; }
+
+        public bool WifiEnabled { get; set; }
+
+        public DeviceOrientation DeviceOrientation { get; set; }
+    }
+
+    public enum DeviceOrientation
+    {
+        Portrait,
+        Landscape,
+    }
+
+    public enum Platform
+    {
+        iOS,
+        Android,
+        Ohos,
+        OhosPC,
+        Windows,
+        Mac,
+        DevTools,
+    }
+
+    public class DeviceInfo
+    {
+        public string Abi { get; set; }
+
+        public string DeviceAbi { get; set; }
+
+        public int BenchmarkLevel { get; set; }
+
+        public string Brand { get; set; }
+
+        public string Model { get; set; }
+
+        public string System { get; set; }
+
+        public Platform Platform { get; set; }
+
+        public string CpuType { get; set; }
+
+        /// <summary>
+        /// Unit is MB
+        /// </summary>
+        public int MemorySize { get; set; }
+    }
 
     public class DeviceBenchmarkInfo
     {
@@ -18,6 +157,33 @@ namespace WxSdk
         public Action onFail;
 
         public Action onComplete;
+    }
+
+
+    public class HostInfo
+    {
+        public string AppId { get; set; }
+    }
+
+    public class AppBaseInfo
+    {
+        public string SDKVersion { get; set; }
+
+        public bool EnableDebug { get; set; }
+
+        public HostInfo Host { get; set; }
+
+        public string Language { get; set; }
+
+        public string Version { get; set; }
+
+        public string PCKernelVersion { get; set; }
+
+        public string Theme { get; set; }
+
+        public float FontSizeScaleFactor { get; set; }
+
+        public float FontSizeSetting { get; set; }
     }
 
     public static class SystemInfo
@@ -62,9 +228,9 @@ namespace WxSdk
         {
             switch (orientation.ToLower())
             {
-            case "portrait": return DeviceOrientation.Portrait;
-            case "landscape": return DeviceOrientation.Landscape;
-            default: throw new ArgumentException($"Invalid device orientation string:{orientation}");
+                case "portrait": return DeviceOrientation.Portrait;
+                case "landscape": return DeviceOrientation.Landscape;
+                default: throw new ArgumentException($"Invalid device orientation string:{orientation}");
             }
         }
 
@@ -85,14 +251,14 @@ namespace WxSdk
         {
             switch (platform.ToLower())
             {
-            case "android": return Platform.Android;
-            case "ios": return Platform.iOS;
-            case "windows": return Platform.Windows;
-            case "mac": return Platform.Mac;
-            case "ohos": return Platform.Ohos;
+                case "android": return Platform.Android;
+                case "ios": return Platform.iOS;
+                case "windows": return Platform.Windows;
+                case "mac": return Platform.Mac;
+                case "ohos": return Platform.Ohos;
                 case "ohos_pc": return Platform.OhosPC;
                 case "devtools": return Platform.DevTools;
-            default: throw new ArgumentException($"Invalid platform string:{platform}");
+                default: throw new ArgumentException($"Invalid platform string:{platform}");
             }
         }
 
@@ -146,10 +312,10 @@ namespace WxSdk
         {
             switch (status.ToLower())
             {
-            case "authorized": return AppAuthStatus.Authorized;
-            case "denied": return AppAuthStatus.Denied;
-            case "not determined": return AppAuthStatus.NotDetermined;
-            default: throw new ArgumentException($"Invalid app auth status string:{status}");
+                case "authorized": return AppAuthStatus.Authorized;
+                case "denied": return AppAuthStatus.Denied;
+                case "not determined": return AppAuthStatus.NotDetermined;
+                default: throw new ArgumentException($"Invalid app auth status string:{status}");
             }
         }
 
@@ -159,7 +325,7 @@ namespace WxSdk
             JSObject jsObj = GetAppAuthorizeSettingInternal();
             return new AppAuthorizeSetting
             {
-                
+
                 AlbumAuthorized = ParseAppAuthStatus(jsObj.GetString("albumAuthorized")),
                 BluetoothAuthorized = ParseAppAuthStatus(jsObj.GetString("bluetoothAuthorized")),
                 CameraAuthorized = ParseAppAuthStatus(jsObj.GetString("cameraAuthorized")),
@@ -174,31 +340,31 @@ namespace WxSdk
             };
         }
 
-        [DllImport("wx", EntryPoint ="wxsdk_get_env")]
+        [DllImport("wx", EntryPoint = "wxsdk_get_env")]
         private static extern string GetEnvInternal();
 
-        [DllImport("wx", EntryPoint ="wxsdk_open_system_bluetooth_setting")]
+        [DllImport("wx", EntryPoint = "wxsdk_open_system_bluetooth_setting")]
         private static extern void OpenSystemBluetoothSettingInternal(DelegateHandle onSuccess, DelegateHandle onFail, DelegateHandle onComplete);
 
-        [DllImport("wx", EntryPoint ="wxsdk_open_app_authorize_setting")]
+        [DllImport("wx", EntryPoint = "wxsdk_open_app_authorize_setting")]
         private static extern void OpenAppAuthorizeSettingInternal(DelegateHandle onSuccess, DelegateHandle onFail, DelegateHandle onComplete);
 
-        [DllImport("wx", EntryPoint ="wxsdk_get_window_info")]
+        [DllImport("wx", EntryPoint = "wxsdk_get_window_info")]
         private static extern JSObject GetWindowInfoInternal();
 
-        [DllImport("wx", EntryPoint ="wxsdk_get_system_setting")]
+        [DllImport("wx", EntryPoint = "wxsdk_get_system_setting")]
         private static extern JSObject GetSystemSettingInternal();
 
-        [DllImport("wx", EntryPoint ="wxsdk_get_device_info")]
+        [DllImport("wx", EntryPoint = "wxsdk_get_device_info")]
         private static extern JSObject GetDeviceInfoInternal();
 
-        [DllImport("wx", EntryPoint ="wxsdk_get_device_benchmark_info")]
+        [DllImport("wx", EntryPoint = "wxsdk_get_device_benchmark_info")]
         private static extern void GetDeviceBenchmarkInfoInternal(DelegateHandle onSuccess, DelegateHandle onFail, DelegateHandle onComplete);
 
-        [DllImport("wx", EntryPoint ="wxsdk_get_app_base_info")]
+        [DllImport("wx", EntryPoint = "wxsdk_get_app_base_info")]
         private static extern JSObject GetAppBaseInfoInternal();
 
-        [DllImport("wx", EntryPoint ="wxsdk_get_app_authorize_setting")]
+        [DllImport("wx", EntryPoint = "wxsdk_get_app_authorize_setting")]
         private static extern JSObject GetAppAuthorizeSettingInternal();
     }
 }

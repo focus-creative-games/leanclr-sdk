@@ -41,7 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="*.cs" />
+    <Compile Include="Animation.cs" />
+    <Compile Include="ApiCompatibleAttribute.cs" />
+    <Compile Include="AudioContext.cs" />
+    <Compile Include="Canvas.cs" />
+    <Compile Include="CanvasContext.cs" />
+    <Compile Include="Console.cs" />
+    <Compile Include="Image.cs" />
+    <Compile Include="InputSystem.cs" />
+    <Compile Include="JSObject.cs" />
+    <Compile Include="MarshalHelper.cs" />
+    <Compile Include="ScreenInfo.cs" />
+    <Compile Include="Sprite.cs" />
+    <Compile Include="SystemInfo.cs" />
+    <Compile Include="Update.cs" />
+    <Compile Include="UpdateManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
