@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Animation.cs" />
     <Compile Include="ApiCompatibleAttribute.cs" />
+    <Compile Include="AppEvent.cs" />
     <Compile Include="AudioContext.cs" />
     <Compile Include="Canvas.cs" />
     <Compile Include="CanvasContext.cs" />
