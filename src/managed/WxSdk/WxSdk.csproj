@@ -50,6 +50,7 @@
     <Compile Include="Image.cs" />
     <Compile Include="InputSystem.cs" />
     <Compile Include="JSObject.cs" />
+    <Compile Include="LifeCycle.cs" />
     <Compile Include="MarshalHelper.cs" />
     <Compile Include="ScreenInfo.cs" />
     <Compile Include="Sprite.cs" />

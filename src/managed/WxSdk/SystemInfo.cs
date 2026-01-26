@@ -206,6 +206,7 @@ namespace WxSdk
         public static WindowsInfo GetWindowInfo()
         {
             JSObject jsObj = GetWindowInfoInternal();
+            JSObject safeArea = jsObj.GetJSObject("safeArea");
             return new WindowsInfo
             {
                 PixelRatio = jsObj.GetFloat("pixelRatio"),
@@ -216,10 +217,10 @@ namespace WxSdk
                 StatusBarHeight = jsObj.GetInt("statusBarHeight"),
                 SafeArea = new SafeArea
                 {
-                    Left = jsObj.GetInt("safeAreaLeft"),
-                    Right = jsObj.GetInt("safeAreaRight"),
-                    Top = jsObj.GetInt("safeAreaTop"),
-                    Bottom = jsObj.GetInt("safeAreaBottom"),
+                    Left = safeArea.GetInt("left"),
+                    Right = safeArea.GetInt("right"),
+                    Top = safeArea.GetInt("top"),
+                    Bottom = safeArea.GetInt("bottom"),
                 }
             };
         }
@@ -290,13 +291,15 @@ namespace WxSdk
         public static AppBaseInfo GetAppBaseInfo()
         {
             JSObject jsObj = GetAppBaseInfoInternal();
+
+            JSObject host = jsObj.GetJSObject("host");
             return new AppBaseInfo
             {
                 SDKVersion = jsObj.GetString("SDKVersion"),
                 EnableDebug = jsObj.GetBool("enableDebug"),
                 Host = new HostInfo
                 {
-                    AppId = jsObj.GetString("hostAppId"),
+                    AppId = host.GetString("appId"),
                 },
                 Language = jsObj.GetString("language"),
                 Version = jsObj.GetString("version"),

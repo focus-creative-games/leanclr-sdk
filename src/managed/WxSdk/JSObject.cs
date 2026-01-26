@@ -77,6 +77,11 @@ namespace WxSdk
         {
             return string.Empty;
         }
+
+        public JSObject GetJSObject(string key)
+        {
+            return null;
+        }
     }
 
     public struct DelegateHandle
