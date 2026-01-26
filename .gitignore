@@ -4,3 +4,5 @@
 /**/build/
 /**/build-*/
 /src/native/___build-wasm.bat
+/**/node_modules/
+/**/*.html

@@ -32,6 +32,9 @@ function extractApiName($) {
   if (!name) {
     name = $("title").text().trim();
   }
+  if (name.startsWith("#")) {
+    name = name.replace("#", "").trim();
+  }
   return name || "未知API";
 }
 

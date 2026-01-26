@@ -9,7 +9,6 @@
 | --- | --- | --- |
 |  | wx.env | 环境变量 |
 |  | 系统 |  |
-|  | 名称 功能 wx.openSystemBluetoothSetting 跳转系统蓝牙设置页 wx.openAppAuthorizeSetting 跳转系统微信授权管理页 wx.getWindowInfo 获取窗口信息 wx.getSystemSetting 获取设备设置 wx.getSystemInfoSync wx.getSystemInfo 的同步版本 wx.getSystemInfoAsync 异步获取系统信息 wx.getSystemInfo 获取系统信息 wx.getDeviceInfo 获取设备基础信息 wx.getDeviceBenchmarkInfo 获取设备性能得分和机型档位数据 wx.getAppBaseInfo 获取微信APP基础信息 wx.getAppAuthorizeSetting 获取微信APP授权设置 |  | 名称 | 功能 |  | wx.openSystemBluetoothSetting | 跳转系统蓝牙设置页 |  | wx.openAppAuthorizeSetting | 跳转系统微信授权管理页 |  | wx.getWindowInfo | 获取窗口信息 |  | wx.getSystemSetting | 获取设备设置 |  | wx.getSystemInfoSync | wx.getSystemInfo 的同步版本 |  | wx.getSystemInfoAsync | 异步获取系统信息 |  | wx.getSystemInfo | 获取系统信息 |  | wx.getDeviceInfo | 获取设备基础信息 |  | wx.getDeviceBenchmarkInfo | 获取设备性能得分和机型档位数据 |  | wx.getAppBaseInfo | 获取微信APP基础信息 |  | wx.getAppAuthorizeSetting | 获取微信APP授权设置 |
 |  | 名称 | 功能 |
 |  | wx.openSystemBluetoothSetting | 跳转系统蓝牙设置页 |
 |  | wx.openAppAuthorizeSetting | 跳转系统微信授权管理页 |
@@ -23,19 +22,16 @@
 |  | wx.getAppBaseInfo | 获取微信APP基础信息 |
 |  | wx.getAppAuthorizeSetting | 获取微信APP授权设置 |
 |  | 更新 |  |
-|  | 名称 功能 wx.updateWeChatApp 更新客户端版本 wx.getUpdateManager 获取全局唯一的版本更新管理器，用于管理小程序更新 UpdateManager UpdateManager 对象，用来管理更新，可通过 wx.getUpdateManager 接口获取实例 名称 功能 UpdateManager.applyUpdate 强制小程序重启并使用新版本 UpdateManager.onCheckForUpdate 监听向微信后台请求检查更新结果事件 UpdateManager.onUpdateFailed 监听小程序更新失败事件 UpdateManager.onUpdateReady 监听小程序有版本更新事件 |  | 名称 | 功能 |  | wx.updateWeChatApp | 更新客户端版本 |  | wx.getUpdateManager | 获取全局唯一的版本更新管理器，用于管理小程序更新 |  | UpdateManager | UpdateManager 对象，用来管理更新，可通过 wx.getUpdateManager 接口获取实例 |  | 名称 功能 UpdateManager.applyUpdate 强制小程序重启并使用新版本 UpdateManager.onCheckForUpdate 监听向微信后台请求检查更新结果事件 UpdateManager.onUpdateFailed 监听小程序更新失败事件 UpdateManager.onUpdateReady 监听小程序有版本更新事件 |  | 名称 | 功能 |  | UpdateManager.applyUpdate | 强制小程序重启并使用新版本 |  | UpdateManager.onCheckForUpdate | 监听向微信后台请求检查更新结果事件 |  | UpdateManager.onUpdateFailed | 监听小程序更新失败事件 |  | UpdateManager.onUpdateReady | 监听小程序有版本更新事件 |
 |  | 名称 | 功能 |
 |  | wx.updateWeChatApp | 更新客户端版本 |
 |  | wx.getUpdateManager | 获取全局唯一的版本更新管理器，用于管理小程序更新 |
 |  | UpdateManager | UpdateManager 对象，用来管理更新，可通过 wx.getUpdateManager 接口获取实例 |
-|  | 名称 功能 UpdateManager.applyUpdate 强制小程序重启并使用新版本 UpdateManager.onCheckForUpdate 监听向微信后台请求检查更新结果事件 UpdateManager.onUpdateFailed 监听小程序更新失败事件 UpdateManager.onUpdateReady 监听小程序有版本更新事件 |  | 名称 | 功能 |  | UpdateManager.applyUpdate | 强制小程序重启并使用新版本 |  | UpdateManager.onCheckForUpdate | 监听向微信后台请求检查更新结果事件 |  | UpdateManager.onUpdateFailed | 监听小程序更新失败事件 |  | UpdateManager.onUpdateReady | 监听小程序有版本更新事件 |
 |  | 名称 | 功能 |
 |  | UpdateManager.applyUpdate | 强制小程序重启并使用新版本 |
 |  | UpdateManager.onCheckForUpdate | 监听向微信后台请求检查更新结果事件 |
 |  | UpdateManager.onUpdateFailed | 监听小程序更新失败事件 |
 |  | UpdateManager.onUpdateReady | 监听小程序有版本更新事件 |
 |  | 生命周期 |  |
-|  | 名称 功能 wx.onShow 监听小游戏回到前台的事件 wx.onHide 监听小游戏隐藏到后台事件 wx.offShow 移除小游戏回到前台的事件的监听函数 wx.offHide 移除小游戏隐藏到后台事件的监听函数 wx.getLaunchOptionsSync 获取小游戏冷启动时的参数 wx.getEnterOptionsSync 获取小游戏打开的参数（包括冷启动和热启动） |  | 名称 | 功能 |  | wx.onShow | 监听小游戏回到前台的事件 |  | wx.onHide | 监听小游戏隐藏到后台事件 |  | wx.offShow | 移除小游戏回到前台的事件的监听函数 |  | wx.offHide | 移除小游戏隐藏到后台事件的监听函数 |  | wx.getLaunchOptionsSync | 获取小游戏冷启动时的参数 |  | wx.getEnterOptionsSync | 获取小游戏打开的参数（包括冷启动和热启动） |
 |  | 名称 | 功能 |
 |  | wx.onShow | 监听小游戏回到前台的事件 |
 |  | wx.onHide | 监听小游戏隐藏到后台事件 |
@@ -44,7 +40,6 @@
 |  | wx.getLaunchOptionsSync | 获取小游戏冷启动时的参数 |
 |  | wx.getEnterOptionsSync | 获取小游戏打开的参数（包括冷启动和热启动） |
 |  | 应用级事件 |  |
-|  | 名称 功能 wx.onUnhandledRejection 监听未处理的 Promise 拒绝事件 wx.onError 监听全局错误事件 wx.onAudioInterruptionEnd 监听音频中断结束事件 wx.onAudioInterruptionBegin 监听音频因为受到系统占用而被中断开始事件 wx.offUnhandledRejection 移除未处理的 Promise 拒绝事件的监听函数 wx.offError 移除全局错误事件的监听函数 wx.offAudioInterruptionEnd 移除音频中断结束事件的监听函数 wx.offAudioInterruptionBegin 移除音频因为受到系统占用而被中断开始事件的监听函数 |  | 名称 | 功能 |  | wx.onUnhandledRejection | 监听未处理的 Promise 拒绝事件 |  | wx.onError | 监听全局错误事件 |  | wx.onAudioInterruptionEnd | 监听音频中断结束事件 |  | wx.onAudioInterruptionBegin | 监听音频因为受到系统占用而被中断开始事件 |  | wx.offUnhandledRejection | 移除未处理的 Promise 拒绝事件的监听函数 |  | wx.offError | 移除全局错误事件的监听函数 |  | wx.offAudioInterruptionEnd | 移除音频中断结束事件的监听函数 |  | wx.offAudioInterruptionBegin | 移除音频因为受到系统占用而被中断开始事件的监听函数 |
 |  | 名称 | 功能 |
 |  | wx.onUnhandledRejection | 监听未处理的 Promise 拒绝事件 |
 |  | wx.onError | 监听全局错误事件 |
@@ -55,36 +50,27 @@
 |  | wx.offAudioInterruptionEnd | 移除音频中断结束事件的监听函数 |
 |  | wx.offAudioInterruptionBegin | 移除音频因为受到系统占用而被中断开始事件的监听函数 |
 |  | 性能 |  |
-|  | 名称 功能 wx.triggerGC 加快触发 JavaScriptCore 垃圾回收（Garbage Collection） wx.reportPerformance 小程序测速上报 wx.getPerformance 获取性能管理器 Performance 性能管理器 名称 功能 Performance.now 可以获取当前时间以微秒为单位的时间戳 |  | 名称 | 功能 |  | wx.triggerGC | 加快触发 JavaScriptCore 垃圾回收（Garbage Collection） |  | wx.reportPerformance | 小程序测速上报 |  | wx.getPerformance | 获取性能管理器 |  | Performance | 性能管理器 |  | 名称 功能 Performance.now 可以获取当前时间以微秒为单位的时间戳 |  | 名称 | 功能 |  | Performance.now | 可以获取当前时间以微秒为单位的时间戳 |
 |  | 名称 | 功能 |
 |  | wx.triggerGC | 加快触发 JavaScriptCore 垃圾回收（Garbage Collection） |
 |  | wx.reportPerformance | 小程序测速上报 |
 |  | wx.getPerformance | 获取性能管理器 |
 |  | Performance | 性能管理器 |
-|  | 名称 功能 Performance.now 可以获取当前时间以微秒为单位的时间戳 |  | 名称 | 功能 |  | Performance.now | 可以获取当前时间以微秒为单位的时间戳 |
 |  | 名称 | 功能 |
 |  | Performance.now | 可以获取当前时间以微秒为单位的时间戳 |
 |  | 分包加载 |  |
-|  | 名称 功能 wx.preDownloadSubpackage 触发分包预下载 wx.loadSubpackage 触发分包加载，详见 分包加载 LoadSubpackageTask 加载分包任务实例，用于获取分包加载状态 名称 功能 LoadSubpackageTask.onProgressUpdate 监听分包加载进度变化事件 PreDownloadSubpackageTask 预下载分包任务实例，用于获取分包预下载状态 名称 功能 PreDownloadSubpackageTask.onProgressUpdate 监听分包加载进度变化事件 |  | 名称 | 功能 |  | wx.preDownloadSubpackage | 触发分包预下载 |  | wx.loadSubpackage | 触发分包加载，详见 分包加载 |  | LoadSubpackageTask | 加载分包任务实例，用于获取分包加载状态 |  | 名称 功能 LoadSubpackageTask.onProgressUpdate 监听分包加载进度变化事件 |  | 名称 | 功能 |  | LoadSubpackageTask.onProgressUpdate | 监听分包加载进度变化事件 |  | PreDownloadSubpackageTask | 预下载分包任务实例，用于获取分包预下载状态 |  | 名称 功能 PreDownloadSubpackageTask.onProgressUpdate 监听分包加载进度变化事件 |  | 名称 | 功能 |  | PreDownloadSubpackageTask.onProgressUpdate | 监听分包加载进度变化事件 |
 |  | 名称 | 功能 |
 |  | wx.preDownloadSubpackage | 触发分包预下载 |
 |  | wx.loadSubpackage | 触发分包加载，详见 分包加载 |
 |  | LoadSubpackageTask | 加载分包任务实例，用于获取分包加载状态 |
-|  | 名称 功能 LoadSubpackageTask.onProgressUpdate 监听分包加载进度变化事件 |  | 名称 | 功能 |  | LoadSubpackageTask.onProgressUpdate | 监听分包加载进度变化事件 |
 |  | 名称 | 功能 |
-|  | LoadSubpackageTask.onProgressUpdate | 监听分包加载进度变化事件 |
-|  | PreDownloadSubpackageTask | 预下载分包任务实例，用于获取分包预下载状态 |
-|  | 名称 功能 PreDownloadSubpackageTask.onProgressUpdate 监听分包加载进度变化事件 |  | 名称 | 功能 |  | PreDownloadSubpackageTask.onProgressUpdate | 监听分包加载进度变化事件 |
 |  | 名称 | 功能 |
 |  | PreDownloadSubpackageTask.onProgressUpdate | 监听分包加载进度变化事件 |
 |  | 调试 |  |
-|  | 名称 功能 wx.setEnableDebug 设置是否打开调试开关 wx.getRealtimeLogManager 获取实时日志管理器对象 wx.getLogManager 获取日志管理器对象 console 向调试面板中打印日志 名称 功能 console.debug 向调试面板中打印 debug 日志 console.error 向调试面板中打印 error 日志 console.group 在调试面板中创建一个新的分组 console.groupEnd 结束由 console.group 创建的分组 console.info 向调试面板中打印 info 日志 console.log 向调试面板中打印 log 日志 console.warn 向调试面板中打印 warn 日志 LogManager 日志管理器实例，可以通过 wx.getLogManager 获取 名称 功能 LogManager.debug 写 debug 日志 LogManager.info 写 info 日志 LogManager.log 写 log 日志 LogManager.warn 写 warn 日志 RealtimeLogManager 实时日志管理器实例，可以通过 wx.getRealtimeLogManager 获取 名称 功能 RealtimeLogManager.addFilterMsg 添加过滤关键字，暂不支持在插件使用 RealtimeLogManager.error 写 error 日志，暂不支持在插件使用 RealtimeLogManager.info 写 info 日志，暂不支持在插件使用 RealtimeLogManager.setFilterMsg 设置过滤关键字，暂不支持在插件使用 RealtimeLogManager.warn 写 warn 日志，暂不支持在插件使用 |  | 名称 | 功能 |  | wx.setEnableDebug | 设置是否打开调试开关 |  | wx.getRealtimeLogManager | 获取实时日志管理器对象 |  | wx.getLogManager | 获取日志管理器对象 |  | console | 向调试面板中打印日志 |  | 名称 功能 console.debug 向调试面板中打印 debug 日志 console.error 向调试面板中打印 error 日志 console.group 在调试面板中创建一个新的分组 console.groupEnd 结束由 console.group 创建的分组 console.info 向调试面板中打印 info 日志 console.log 向调试面板中打印 log 日志 console.warn 向调试面板中打印 warn 日志 |  | 名称 | 功能 |  | console.debug | 向调试面板中打印 debug 日志 |  | console.error | 向调试面板中打印 error 日志 |  | console.group | 在调试面板中创建一个新的分组 |  | console.groupEnd | 结束由 console.group 创建的分组 |  | console.info | 向调试面板中打印 info 日志 |  | console.log | 向调试面板中打印 log 日志 |  | console.warn | 向调试面板中打印 warn 日志 |  | LogManager | 日志管理器实例，可以通过 wx.getLogManager 获取 |  | 名称 功能 LogManager.debug 写 debug 日志 LogManager.info 写 info 日志 LogManager.log 写 log 日志 LogManager.warn 写 warn 日志 |  | 名称 | 功能 |  | LogManager.debug | 写 debug 日志 |  | LogManager.info | 写 info 日志 |  | LogManager.log | 写 log 日志 |  | LogManager.warn | 写 warn 日志 |  | RealtimeLogManager | 实时日志管理器实例，可以通过 wx.getRealtimeLogManager 获取 |  | 名称 功能 RealtimeLogManager.addFilterMsg 添加过滤关键字，暂不支持在插件使用 RealtimeLogManager.error 写 error 日志，暂不支持在插件使用 RealtimeLogManager.info 写 info 日志，暂不支持在插件使用 RealtimeLogManager.setFilterMsg 设置过滤关键字，暂不支持在插件使用 RealtimeLogManager.warn 写 warn 日志，暂不支持在插件使用 |  | 名称 | 功能 |  | RealtimeLogManager.addFilterMsg | 添加过滤关键字，暂不支持在插件使用 |  | RealtimeLogManager.error | 写 error 日志，暂不支持在插件使用 |  | RealtimeLogManager.info | 写 info 日志，暂不支持在插件使用 |  | RealtimeLogManager.setFilterMsg | 设置过滤关键字，暂不支持在插件使用 |  | RealtimeLogManager.warn | 写 warn 日志，暂不支持在插件使用 |
 |  | 名称 | 功能 |
 |  | wx.setEnableDebug | 设置是否打开调试开关 |
 |  | wx.getRealtimeLogManager | 获取实时日志管理器对象 |
 |  | wx.getLogManager | 获取日志管理器对象 |
 |  | console | 向调试面板中打印日志 |
-|  | 名称 功能 console.debug 向调试面板中打印 debug 日志 console.error 向调试面板中打印 error 日志 console.group 在调试面板中创建一个新的分组 console.groupEnd 结束由 console.group 创建的分组 console.info 向调试面板中打印 info 日志 console.log 向调试面板中打印 log 日志 console.warn 向调试面板中打印 warn 日志 |  | 名称 | 功能 |  | console.debug | 向调试面板中打印 debug 日志 |  | console.error | 向调试面板中打印 error 日志 |  | console.group | 在调试面板中创建一个新的分组 |  | console.groupEnd | 结束由 console.group 创建的分组 |  | console.info | 向调试面板中打印 info 日志 |  | console.log | 向调试面板中打印 log 日志 |  | console.warn | 向调试面板中打印 warn 日志 |
 |  | 名称 | 功能 |
 |  | console.debug | 向调试面板中打印 debug 日志 |
 |  | console.error | 向调试面板中打印 error 日志 |
@@ -94,14 +80,12 @@
 |  | console.log | 向调试面板中打印 log 日志 |
 |  | console.warn | 向调试面板中打印 warn 日志 |
 |  | LogManager | 日志管理器实例，可以通过 wx.getLogManager 获取 |
-|  | 名称 功能 LogManager.debug 写 debug 日志 LogManager.info 写 info 日志 LogManager.log 写 log 日志 LogManager.warn 写 warn 日志 |  | 名称 | 功能 |  | LogManager.debug | 写 debug 日志 |  | LogManager.info | 写 info 日志 |  | LogManager.log | 写 log 日志 |  | LogManager.warn | 写 warn 日志 |
 |  | 名称 | 功能 |
 |  | LogManager.debug | 写 debug 日志 |
 |  | LogManager.info | 写 info 日志 |
 |  | LogManager.log | 写 log 日志 |
 |  | LogManager.warn | 写 warn 日志 |
 |  | RealtimeLogManager | 实时日志管理器实例，可以通过 wx.getRealtimeLogManager 获取 |
-|  | 名称 功能 RealtimeLogManager.addFilterMsg 添加过滤关键字，暂不支持在插件使用 RealtimeLogManager.error 写 error 日志，暂不支持在插件使用 RealtimeLogManager.info 写 info 日志，暂不支持在插件使用 RealtimeLogManager.setFilterMsg 设置过滤关键字，暂不支持在插件使用 RealtimeLogManager.warn 写 warn 日志，暂不支持在插件使用 |  | 名称 | 功能 |  | RealtimeLogManager.addFilterMsg | 添加过滤关键字，暂不支持在插件使用 |  | RealtimeLogManager.error | 写 error 日志，暂不支持在插件使用 |  | RealtimeLogManager.info | 写 info 日志，暂不支持在插件使用 |  | RealtimeLogManager.setFilterMsg | 设置过滤关键字，暂不支持在插件使用 |  | RealtimeLogManager.warn | 写 warn 日志，暂不支持在插件使用 |
 |  | 名称 | 功能 |
 |  | RealtimeLogManager.addFilterMsg | 添加过滤关键字，暂不支持在插件使用 |
 |  | RealtimeLogManager.error | 写 error 日志，暂不支持在插件使用 |
@@ -109,11 +93,6 @@
 |  | RealtimeLogManager.setFilterMsg | 设置过滤关键字，暂不支持在插件使用 |
 |  | RealtimeLogManager.warn | 写 warn 日志，暂不支持在插件使用 |
 |  | 加密 |  |
-|  | 名称 功能 wx.getUserCryptoManager 获取用户加密模块 UserCryptoManager 用户加密模块 名称 功能 UserCryptoManager.getLatestUserKey 获取最新的用户加密密钥 UserCryptoManager.getRandomValues 获取密码学安全随机数 |  | 名称 | 功能 |  | wx.getUserCryptoManager | 获取用户加密模块 |  | UserCryptoManager | 用户加密模块 |  | 名称 功能 UserCryptoManager.getLatestUserKey 获取最新的用户加密密钥 UserCryptoManager.getRandomValues 获取密码学安全随机数 |  | 名称 | 功能 |  | UserCryptoManager.getLatestUserKey | 获取最新的用户加密密钥 |  | UserCryptoManager.getRandomValues | 获取密码学安全随机数 |
-|  | 名称 | 功能 |
-|  | wx.getUserCryptoManager | 获取用户加密模块 |
-|  | UserCryptoManager | 用户加密模块 |
-|  | 名称 功能 UserCryptoManager.getLatestUserKey 获取最新的用户加密密钥 UserCryptoManager.getRandomValues 获取密码学安全随机数 |  | 名称 | 功能 |  | UserCryptoManager.getLatestUserKey | 获取最新的用户加密密钥 |  | UserCryptoManager.getRandomValues | 获取密码学安全随机数 |
 |  | 名称 | 功能 |
 |  | UserCryptoManager.getLatestUserKey | 获取最新的用户加密密钥 |
 |  | UserCryptoManager.getRandomValues | 获取密码学安全随机数 |
