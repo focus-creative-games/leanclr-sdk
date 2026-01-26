@@ -101,6 +101,8 @@ namespace WxSdk
 
     public struct ObjectHandle
     {
+        public static readonly ObjectHandle Null = new ObjectHandle(0);
+
         private readonly int Id;
 
         public ObjectHandle(int id)

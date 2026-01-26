@@ -2,12 +2,10 @@ using System.Runtime.InteropServices;
 
 namespace WxSdk
 {
-    public class PerformanceManager
+    public class PerformanceManager : WxObject
     {
-        private readonly ObjectHandle _handle;
-        public PerformanceManager(ObjectHandle handle)
+        public PerformanceManager(ObjectHandle handle) : base(handle)
         {
-            _handle = handle;
         }
 
         public double Now => GetNowInternal(_handle);

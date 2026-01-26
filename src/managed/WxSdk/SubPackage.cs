@@ -14,8 +14,12 @@ namespace WxSdk
         public int TotalBytesExpectedToWrite { get; internal set; }
     }
 
-    public class PreDownloadSubpackageTask
+    public class PreDownloadSubpackageTask : WxObject
     {
+        public PreDownloadSubpackageTask(ObjectHandle handle) : base(handle)
+        {
+        }
+
         public void OnProgressUpdate(Action<OnProgressUpdateEventArgs> callback)
         {
             OnProgressUpdateInternal(MarshalHelper.ToDelegateHandle(new Action<JSObject>((res) =>
@@ -35,8 +39,12 @@ namespace WxSdk
         private static extern void OnProgressUpdateInternal(DelegateHandle callback);
     }
 
-    public class LoadSubpackageTask
+    public class LoadSubpackageTask : WxObject
     {
+        public LoadSubpackageTask(ObjectHandle handle) : base(handle)
+        {
+        }
+
         public void OnProgressUpdate(Action<OnProgressUpdateEventArgs> callback)
         {
             OnProgressUpdateInternal(MarshalHelper.ToDelegateHandle(new Action<JSObject>((res) =>
@@ -63,7 +71,7 @@ namespace WxSdk
             var arg = new JSObject();
             var ret = PreDownloadSubpackageInternal(arg);
 
-            return null;
+            return new PreDownloadSubpackageTask(ret);
         }
 
         public static LoadSubpackageTask LoadSubpackage(string name)
@@ -71,7 +79,7 @@ namespace WxSdk
             var arg = new JSObject();
             var ret = LoadSubpackageInternal(arg);
 
-            return null;
+            return new LoadSubpackageTask(ret);
         }
 
         [DllImport("wx", EntryPoint = "wxsdk_pre_download_subpackage")]

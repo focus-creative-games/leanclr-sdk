@@ -61,6 +61,7 @@
     <Compile Include="Update.cs" />
     <Compile Include="UpdateManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WxObject.cs" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

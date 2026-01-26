@@ -1,3 +1,5 @@
+using System;
+
 namespace WxSdk
 {
     public static class MarshalHelper
@@ -15,6 +17,11 @@ namespace WxSdk
         public static object GetObjectFromHandle(ObjectHandle handle)
         {
             throw new System.NotImplementedException();
+        }
+
+        internal static void ReleaseObjectHandle(ObjectHandle handle)
+        {
+            throw new NotImplementedException();
         }
     }
 }

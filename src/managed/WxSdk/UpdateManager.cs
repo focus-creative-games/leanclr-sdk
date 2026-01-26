@@ -3,13 +3,11 @@ using System.Runtime.InteropServices;
 
 namespace WxSdk
 {
-    public class UpdateManager
+    public class UpdateManager : WxObject
     {
-        private readonly ObjectHandle _handle;
 
-        public UpdateManager(ObjectHandle handle)
+        public UpdateManager(ObjectHandle handle) : base(handle)
         {
-            _handle = handle;
         }
 
         public void ApplyUpdate()
