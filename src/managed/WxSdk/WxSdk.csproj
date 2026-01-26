@@ -53,6 +53,7 @@
     <Compile Include="JSObject.cs" />
     <Compile Include="LifeCycle.cs" />
     <Compile Include="MarshalHelper.cs" />
+    <Compile Include="Performance.cs" />
     <Compile Include="ScreenInfo.cs" />
     <Compile Include="Sprite.cs" />
     <Compile Include="SystemInfo.cs" />

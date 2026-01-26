@@ -57,6 +57,7 @@ namespace WxSdk
         private static extern void OnUnhandledRejectionInternal(DelegateHandle listener);
 
         [DllImport("wx", EntryPoint = "wxsdk_off_unhandled_rejection")]
+        [ApiCompatible("2.10.0")]
         private static extern void OffUnhandledRejectionInternal(DelegateHandle listener);
 
         [DllImport("wx", EntryPoint = "wxsdk_on_error")]
@@ -66,15 +67,19 @@ namespace WxSdk
         private static extern void OffErrorInternal(DelegateHandle listener);
 
         [DllImport("wx", EntryPoint = "wxsdk_on_audio_interruption_begin")]
+        [ApiCompatible("1.8.0")]
         private static extern void OnAudioInterruptionBeginInternal(DelegateHandle listener);
 
         [DllImport("wx", EntryPoint = "wxsdk_off_audio_interruption_begin")]
+        [ApiCompatible("1.8.0")]
         private static extern void OffAudioInterruptionBeginInternal(DelegateHandle listener);
 
         [DllImport("wx", EntryPoint = "wxsdk_on_audio_interruption_end")]
+        [ApiCompatible("1.8.0")]
         private static extern void OnAudioInterruptionEndInternal(DelegateHandle listener);
 
         [DllImport("wx", EntryPoint = "wxsdk_off_audio_interruption_end")]
+        [ApiCompatible("1.8.0")]
         private static extern void OffAudioInterruptionEndInternal(DelegateHandle listener);
 
     }
