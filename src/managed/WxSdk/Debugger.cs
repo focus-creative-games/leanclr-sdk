@@ -53,6 +53,7 @@ namespace WxSdk
 
     public static class SubPackage
     {
+        [ApiCompatible("1.4.0")]
         public static void SetEnableDebug(bool enableDebug, Action onSucc, Action onFail, Action onComplete)
         {
 
